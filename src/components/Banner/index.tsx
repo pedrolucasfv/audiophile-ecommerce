@@ -13,14 +13,14 @@ export type BannerProps = {
 const Banner = ({
   nameProduct,
   description,
-  image,
+  image = '/',
   title,
   invert = false,
   color = 'black'
 }: BannerProps) => (
-  <S.Wrapper color={color}>
+  <S.Wrapper color={color} invert={invert}>
     <S.Info>
-      <S.Title>{title}</S.Title>
+      <S.Title color={color}>{title}</S.Title>
       <S.NameProduct>{nameProduct}</S.NameProduct>
       <S.Description>{description}</S.Description>
       <Button text="SEE PRODUCT" />
