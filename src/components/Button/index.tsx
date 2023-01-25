@@ -7,7 +7,7 @@ export type ButtonProps = {
 }
 
 const Button = ({ color = 'primary', text, link = '/' }: ButtonProps) => (
-  <S.Wrapper href={link} color={color}>
+  <S.Wrapper aria-label="button" href={link} color={color}>
     {text}
   </S.Wrapper>
 )
