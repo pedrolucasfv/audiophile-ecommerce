@@ -27,6 +27,7 @@ export default {
     accentLight: '#fbaf85',
     gray: '#f1f1f1',
     lightGray: '#d3d3d3',
+    darkGray: '#7f7f7f',
     white: '#fff',
     black: '#191919',
     text: 'rgba(0,0,0,0.5)',
