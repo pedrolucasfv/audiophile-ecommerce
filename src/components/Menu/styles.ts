@@ -22,7 +22,7 @@ export const MenuNav = styled.div``
 
 export const MenuLink = styled.a`
   ${({ theme }) => css`
-    color: white;
+    color: ${theme.colors.white};
     font-size: 1.4rem;
     margin: 0.3rem 2.8rem 0;
     text-decoration: none;
