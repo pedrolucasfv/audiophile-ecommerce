@@ -13,10 +13,10 @@ const Menu = () => {
   return (
     <S.Wrapper>
       <MediaMatch lessThan="medium" onClick={() => setIsOpen(true)}>
-        <MenuButtonWide size={18} color="white" />
+        <MenuButtonWide size={18} color="white" aria-label="open menu" />
       </MediaMatch>
 
-      <S.Logo />
+      <S.Logo role="img" aria-label="Audiophile" />
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
@@ -29,7 +29,7 @@ const Menu = () => {
 
       <S.MenuGroup>
         <PersonFill size={20} />
-        <Cart size={20} />
+        <Cart size={20} aria-label="Cart" />
       </S.MenuGroup>
 
       <S.MenuToggle aria-hidden={!isOpen} isOpenMenu={isOpen}>
