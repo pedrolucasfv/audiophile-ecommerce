@@ -25,13 +25,13 @@ const Footer = ({ text, socialNetworks }: FooterProps) => (
       <S.MenuLink href="#">earphones</S.MenuLink>
     </S.MenuNav>
     <S.SocialNetworks>
-      <S.MenuLink href={socialNetworks.facebook}>
+      <S.MenuLink href={socialNetworks.facebook} aria-label="Facebook">
         <Facebook size={20} />
       </S.MenuLink>
-      <S.MenuLink href={socialNetworks.instagram}>
+      <S.MenuLink href={socialNetworks.instagram} aria-label="Instagram">
         <Instagram size={20} />
       </S.MenuLink>
-      <S.MenuLink href={socialNetworks.twitter}>
+      <S.MenuLink href={socialNetworks.twitter} aria-label="Twitter">
         <Twitter size={20} />
       </S.MenuLink>
     </S.SocialNetworks>
