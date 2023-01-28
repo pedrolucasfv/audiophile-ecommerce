@@ -10,7 +10,7 @@ const ContentInfo = ({ image, text, title }: ContentInfoProps) => (
   <S.Wrapper>
     <S.Image src={image} />
     <S.Info>
-      <S.Title>{title}</S.Title>
+      <S.Title dangerouslySetInnerHTML={{ __html: title }} />
       <S.Text>{text}</S.Text>
     </S.Info>
   </S.Wrapper>
