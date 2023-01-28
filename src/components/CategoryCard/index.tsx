@@ -9,9 +9,9 @@ export type CategoryCardProps = {
 
 const CategoryCard = ({ image, title, link }: CategoryCardProps) => (
   <S.Wrapper>
-    <S.Image src={image} />
+    <S.Image src={image} role="img" aria-label="Category Image" />
     <S.Title>{title}</S.Title>
-    <S.Shop href={link}>
+    <S.Shop href={link} aria-label="Shop Button">
       SHOP <ShopIcon size={12} />
     </S.Shop>
   </S.Wrapper>
