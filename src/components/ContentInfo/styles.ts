@@ -49,7 +49,7 @@ export const Title = styled.h5`
   `}
 `
 
-export const Text = styled.div`
+export const Text = styled.text`
   ${({ theme }) => css`
     justify-self: center;
     font-size: ${theme.font.sizes.medium};

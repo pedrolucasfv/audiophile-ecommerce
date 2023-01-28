@@ -8,7 +8,7 @@ export type ContentInfoProps = {
 
 const ContentInfo = ({ image, text, title }: ContentInfoProps) => (
   <S.Wrapper>
-    <S.Image src={image} />
+    <S.Image src={image} role="img" aria-label="Image ContentInfo" />
     <S.Info>
       <S.Title dangerouslySetInnerHTML={{ __html: title }} />
       <S.Text>{text}</S.Text>
