@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import Banner from '.'
+import Banner, { BannerProps } from '.'
 
 export default {
   title: 'Banner',
@@ -13,4 +13,8 @@ export default {
   }
 } as Meta
 
-export const Default: Story = (args) => <Banner {...args} />
+export const Default: Story<BannerProps> = (args) => (
+  <div style={{ maxWidth: 800 }}>
+    <Banner {...args} />
+  </div>
+)
