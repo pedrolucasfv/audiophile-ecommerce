@@ -4,14 +4,15 @@ import { ChevronRight as ShopIcon } from '@styled-icons/bootstrap/ChevronRight'
 export type CategoryCardProps = {
   image: string
   title: string
+  link: string
 }
 
-const CategoryCard = ({ image, title }: CategoryCardProps) => (
+const CategoryCard = ({ image, title, link }: CategoryCardProps) => (
   <S.Wrapper>
     <S.Image src={image} />
     <S.Title>{title}</S.Title>
-    <S.Shop>
-      SHOP <ShopIcon size={14} />
+    <S.Shop href={link}>
+      SHOP <ShopIcon size={12} />
     </S.Shop>
   </S.Wrapper>
 )

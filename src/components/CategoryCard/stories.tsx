@@ -5,13 +5,14 @@ export default {
   title: 'CategoryCard',
   component: CategoryCard,
   args: {
-    image: '/img/image-product.jpg',
-    title: 'Headphones'
+    image: '/img/image-headphones.png',
+    title: 'Headphones',
+    link: '/headphones'
   }
 } as Meta
 
 export const Default: Story<CategoryCardProps> = (args) => (
-  <div style={{ maxWidth: 400 }}>
+  <div style={{ maxWidth: 400, margin: '10rem auto' }}>
     <CategoryCard {...args} />
   </div>
 )
