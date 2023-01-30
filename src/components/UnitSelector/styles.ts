@@ -9,7 +9,7 @@ export const Wrapper = styled.main`
   `}
 `
 
-export const Number = styled.div`
+export const Number = styled.h4`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.bold};

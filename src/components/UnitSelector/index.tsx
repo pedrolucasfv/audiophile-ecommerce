@@ -20,11 +20,11 @@ const UnitSelector = ({ unit = 0 }: UnitSelectorProps) => {
   return (
     <S.Wrapper>
       <S.Plus onClick={() => handleUnit('plus')}>
-        <Plus size={24} />
+        <Plus size={24} aria-label="Plus" />
       </S.Plus>
       <S.Number>{unitState}</S.Number>
       <S.Sub onClick={() => handleUnit('sub')}>
-        <Sub size={24} />
+        <Sub size={24} aria-label="Sub" />
       </S.Sub>
     </S.Wrapper>
   )
