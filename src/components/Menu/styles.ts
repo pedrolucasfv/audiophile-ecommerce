@@ -6,6 +6,8 @@ export const Wrapper = styled.main`
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.small} 0;
+    background-color: ${theme.colors.black};
+    border-bottom: solid 0.1rem ${theme.colors.darkGray};
   `}
 `
 

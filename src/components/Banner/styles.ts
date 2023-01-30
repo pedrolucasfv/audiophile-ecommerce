@@ -35,7 +35,7 @@ export const Wrapper = styled.main<WrapperProps>`
 export const Info = styled.div`
   ${({ theme }) => css`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     padding: ${theme.spacings.large};
@@ -56,33 +56,33 @@ const titleModifiers = {
 export const Title = styled.h4<ColorProps>`
   ${({ theme, color }) => css`
     letter-spacing: ${theme.spacings.xxsmall};
+    font-size: ${theme.font.sizes.large};
     ${color && titleModifiers[color](theme)}
+    text-transform: uppercase;
   `}
 `
 
 export const NameProduct = styled.h2`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xxlarge};
+    font-size: 5.5rem;
     margin: ${theme.spacings.xsmall} 0;
   `}
 `
 export const Description = styled.h4`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xsmall};
+    font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.normal};
-    margin-bottom: ${theme.spacings.xsmall};
+    margin-bottom: ${theme.spacings.large};
+    color: ${theme.colors.darkGray};
   `}
 `
 
-type ImageProps = {
-  src: string
-}
-
-export const Image = styled.div<ImageProps>`
-  ${({ src }) => css`
+export const ImageBox = styled.div`
+  width: 60rem;
+  height: 60rem;
+  img {
     height: 100%;
-    background: url(${src});
-    background-size: contain;
-    background-repeat: no-repeat;
-  `}
+    width: 100%;
+    object-fit: cover;
+  }
 `
