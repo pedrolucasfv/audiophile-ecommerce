@@ -8,7 +8,7 @@ export const Wrapper = styled.main`
   justify-content: space-around;
   align-items: center;
   height: 20rem;
-  width: 25rem;
+  width: 34rem;
   border-radius: 1rem;
 `
 

@@ -14,7 +14,7 @@ const wrapperModifiers = {
   `,
   white: (theme: DefaultTheme) => css`
     color: black;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.gray};
   `,
   black: (theme: DefaultTheme) => css`
     color: white;
