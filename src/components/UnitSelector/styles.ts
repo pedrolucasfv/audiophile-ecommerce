@@ -6,29 +6,33 @@ export const Wrapper = styled.main`
     align-items: center;
     justify-content: space-between;
     background-color: ${theme.colors.gray};
-    padding: ${theme.spacings.xsmall};
   `}
 `
 
 export const Number = styled.div`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.medium};
+    font-size: ${theme.font.sizes.large};
+    font-weight: ${theme.font.bold};
   `}
 `
 
 export const Plus = styled.div`
   ${({ theme }) => css`
+    padding: ${theme.spacings.xsmall};
     cursor: pointer;
     &:hover {
       color: ${theme.colors.accent};
+      background-color: lightgray;
     }
   `}
 `
 export const Sub = styled.div`
   ${({ theme }) => css`
+    padding: ${theme.spacings.xsmall};
     cursor: pointer;
     &:hover {
       color: ${theme.colors.accent};
+      background-color: lightgray;
     }
   `}
 `
