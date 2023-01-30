@@ -17,7 +17,7 @@ const Product = ({ description, name, price, title, image }: ProductProps) => (
       {!!title && <S.Title>{title}</S.Title>}
       <S.Name>{name}</S.Name>
       <S.Description>{description}</S.Description>
-      <S.Price>$ {price}</S.Price>
+      <S.Price aria-label="price">$ {price}</S.Price>
       <S.Buttons>
         <S.UnitSelector>
           <UnitSelector />
