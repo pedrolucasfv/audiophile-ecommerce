@@ -1,4 +1,5 @@
 import Button from 'components/Button'
+import UnitSelector from 'components/UnitSelector'
 import * as S from './styles'
 
 export type ProductProps = {
@@ -16,9 +17,11 @@ const Product = ({ description, name, price, title, image }: ProductProps) => (
       {!!title && <S.Title>{title}</S.Title>}
       <S.Name>{name}</S.Name>
       <S.Description>{description}</S.Description>
-      <S.Price>${price}</S.Price>
+      <S.Price>$ {price}</S.Price>
       <S.Buttons>
-        <S.UnitSelector>0</S.UnitSelector>
+        <S.UnitSelector>
+          <UnitSelector />
+        </S.UnitSelector>
         <Button text="ADD TO CART" />
       </S.Buttons>
     </S.Content>
