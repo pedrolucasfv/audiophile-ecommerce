@@ -9,7 +9,7 @@ export type ProductInfoProps = {
   items: ItemProps[]
 }
 
-const ProductInfo = ({ items = [], text }: ProductInfoProps) => (
+const ProductInfo = ({ items, text }: ProductInfoProps) => (
   <S.Wrapper>
     <S.LeftContent>
       <S.Title>FEATURES</S.Title>
