@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-export type ItemProps = {
+type ItemProps = {
   quantity: number
   item: string
 }
