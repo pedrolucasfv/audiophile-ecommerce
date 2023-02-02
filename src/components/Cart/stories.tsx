@@ -10,7 +10,13 @@ export default {
         image: '/img/image-product.jpg',
         nameProduct: 'XX99 MK ll',
         unit: 3,
-        price: '4.500'
+        price: 5000
+      },
+      {
+        image: '/img/image-product.jpg',
+        nameProduct: 'XX99 MK ll',
+        unit: 5,
+        price: 2000
       }
     ]
   }

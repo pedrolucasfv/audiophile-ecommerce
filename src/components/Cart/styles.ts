@@ -1,10 +1,39 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
-  width: 40rem;
+  width: 45rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 `
 
-export const Header = styled.div``
+export const Header = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: ${theme.spacings.medium};
+  `}
+`
+
+export const Title = styled.h4`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xlarge};
+    font-weight: ${theme.font.bold};
+  `}
+`
+
+export const RemoveAll = styled.a`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.medium};
+    color: ${theme.colors.darkGray};
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: ${theme.colors.accent};
+    }
+  `}
+`
 
 type ImageProps = {
   src: string
@@ -20,8 +49,43 @@ export const Image = styled.div<ImageProps>`
   `}
 `
 
-export const Title = styled.h4``
+export const Item = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+`
 
-export const Item = styled.div``
+export const ContentItem = styled.div``
 
-export const Price = styled.div``
+export const NameProduct = styled.h4`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.large};
+    font-weight: ${theme.font.bold};
+    padding-right: 7rem;
+  `}
+`
+
+export const Price = styled.div`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.small};
+    font-weight: ${theme.font.bold};
+    color: ${theme.colors.darkGray};
+  `}
+`
+
+export const TotalContent = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    margin: ${theme.spacings.small} 0;
+    font-size: ${theme.font.sizes.large};
+  `}
+`
+export const PriceTotal = styled.h4``
+export const Total = styled.h4`
+  ${({ theme }) => css`
+    font-weight: ${theme.font.normal};
+    color: ${theme.colors.darkGray};
+  `}
+`
