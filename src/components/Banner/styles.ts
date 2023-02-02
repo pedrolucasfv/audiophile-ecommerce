@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
 type ColorProps = {
-  color: 'primary' | 'white' | 'black'
+  color: 'primary' | 'white' | 'black' | 'none'
 }
 type WrapperProps = {
   invert: boolean
@@ -9,16 +9,20 @@ type WrapperProps = {
 
 const wrapperModifiers = {
   primary: (theme: DefaultTheme) => css`
-    color: white;
+    color: ${theme.colors.white};
     background-color: ${theme.colors.accent};
   `,
   white: (theme: DefaultTheme) => css`
-    color: black;
+    color: ${theme.colors.black};
     background-color: ${theme.colors.gray};
   `,
   black: (theme: DefaultTheme) => css`
-    color: white;
+    color: ${theme.colors.white};
     background-color: ${theme.colors.black};
+  `,
+  none: (theme: DefaultTheme) => css`
+    color: ${theme.colors.black};
+    background-color: none;
   `,
   invert: () => css`
     direction: rtl;
@@ -50,6 +54,9 @@ const titleModifiers = {
     color: ${theme.colors.accent};
   `,
   black: (theme: DefaultTheme) => css`
+    color: ${theme.colors.darkGray};
+  `,
+  none: (theme: DefaultTheme) => css`
     color: ${theme.colors.darkGray};
   `
 }

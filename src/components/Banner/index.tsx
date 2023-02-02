@@ -8,7 +8,7 @@ export type BannerProps = {
   description?: string
   image?: string
   invert?: boolean
-  color?: 'primary' | 'white' | 'black'
+  color?: 'primary' | 'white' | 'black' | 'none'
 }
 
 const Banner = ({
