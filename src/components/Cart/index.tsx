@@ -13,15 +13,13 @@ export type CartProps = {
   items?: ItemProps[]
 }
 
-const Cart = ({ items = [] }: CartProps) => {
+const Cart = ({ items }: CartProps) => {
   let total = 0
 
   function sumPrice() {
-    items.map((value) => {
+    items?.map((value) => {
       const totalProduct = value.price * value.unit
-      console.log(totalProduct)
       total = total + totalProduct
-      console.log(total)
     })
   }
   sumPrice()
@@ -29,10 +27,10 @@ const Cart = ({ items = [] }: CartProps) => {
   return (
     <S.Wrapper>
       <S.Header>
-        <S.Title>CART ({items.length})</S.Title>
+        <S.Title>CART ({items?.length})</S.Title>
         <S.RemoveAll>Remove All</S.RemoveAll>
       </S.Header>
-      {items.map((value) => (
+      {items?.map((value) => (
         <>
           <S.Item>
             <S.Image src={value.image} />
