@@ -4,9 +4,12 @@ import { Container } from 'components/Container'
 import ContentInfo from 'components/ContentInfo'
 import Footer from 'components/Footer'
 import Menu from 'components/Menu'
+import { useRouter } from 'next/router'
 import * as S from './styles'
 
 const Category = () => {
+  const router = useRouter()
+
   const banner = {
     title: 'new product',
     nameProduct: 'XX99 MARK II HEADPHONES',
@@ -39,7 +42,7 @@ const Category = () => {
       <S.BlackContent>
         <Container>
           <Menu />
-          <S.Title>HEADPHONES</S.Title>
+          <S.Title>{router?.query.slug}</S.Title>
         </Container>
       </S.BlackContent>
       <Container>

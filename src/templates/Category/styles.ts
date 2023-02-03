@@ -16,6 +16,7 @@ export const Title = styled.h4`
     position: absolute;
     bottom: 25%;
     right: 45%;
+    text-transform: uppercase;
   `}
 `
 export const BannerContent = styled.div`
