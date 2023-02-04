@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
   width: 45rem;
-  height: 50rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  background-color: white;
 `
 
 export const Header = styled.div`
@@ -20,6 +20,7 @@ export const Title = styled.h4`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.xlarge};
     font-weight: ${theme.font.bold};
+    color: ${theme.colors.black};
   `}
 `
 
@@ -82,7 +83,9 @@ export const TotalContent = styled.div`
     font-size: ${theme.font.sizes.large};
   `}
 `
-export const PriceTotal = styled.h4``
+export const PriceTotal = styled.h4`
+  color: black;
+`
 export const Total = styled.h4`
   ${({ theme }) => css`
     font-weight: ${theme.font.normal};

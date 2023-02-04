@@ -1,15 +1,17 @@
 import MediaMatch from 'components/MediaMatch'
 import * as S from './styles'
 
-import { Cart } from '@styled-icons/bootstrap/Cart'
+import { Cart as IconCart } from '@styled-icons/bootstrap/Cart'
 import { PersonFill } from '@styled-icons/bootstrap/PersonFill'
 import { MenuButtonWide } from '@styled-icons/bootstrap/MenuButtonWide'
 import { ArrowDownSquare } from '@styled-icons/bootstrap/ArrowDownSquare'
 
 import { useState } from 'react'
+import Cart from 'components/Cart'
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(false)
   return (
     <S.Wrapper>
       <MediaMatch lessThan="medium" onClick={() => setIsOpen(true)}>
@@ -29,7 +31,12 @@ const Menu = () => {
 
       <S.MenuGroup>
         <PersonFill size={20} />
-        <Cart size={20} aria-label="Cart" />
+        <IconCart
+          size={20}
+          aria-label="Cart"
+          onClick={() => setIsCartOpen(!isCartOpen)}
+        />
+        <S.Cart>{isCartOpen && <Cart />}</S.Cart>
       </S.MenuGroup>
 
       <S.MenuToggle aria-hidden={!isOpen} isOpenMenu={isOpen}>

@@ -37,8 +37,14 @@ export const MenuLink = styled.a`
   `}
 `
 
+export const Cart = styled.div`
+  position: absolute;
+  right: 0%;
+  z-index: 50;
+`
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
+    position: relative;
     color: white;
     svg {
       margin-right: 1rem;
