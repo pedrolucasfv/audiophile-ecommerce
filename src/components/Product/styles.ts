@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `
 
 type ImageProps = {
@@ -10,8 +10,8 @@ type ImageProps = {
 }
 export const Image = styled.div<ImageProps>`
   ${({ src }) => css`
-    height: 30rem;
     width: 50rem;
+    height: 50rem;
     background: url(${src});
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,6 +21,7 @@ export const Image = styled.div<ImageProps>`
 export const Content = styled.div`
   ${({ theme }) => css`
     margin-left: ${theme.spacings.medium};
+    align-self: center;
   `}
 `
 
@@ -36,8 +37,9 @@ export const Title = styled.h4`
 
 export const Name = styled.h2`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xxlarge};
+    font-size: 5rem;
     margin: ${theme.spacings.xsmall} 0;
+    font-weight: ${theme.font.bold};
   `}
 `
 
@@ -47,15 +49,17 @@ export const Description = styled.h4`
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.normal};
     margin-bottom: ${theme.spacings.xsmall};
+    line-height: 2.5rem;
+    width: 80%;
   `}
 `
 
 export const Price = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.black};
-    font-size: ${theme.font.sizes.medium};
+    font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.bold};
-    margin-bottom: ${theme.spacings.xsmall};
+    margin: ${theme.spacings.medium} 0;
   `}
 `
 
