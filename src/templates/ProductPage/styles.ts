@@ -32,3 +32,24 @@ export const ProductInfo = styled.div`
 export const ContentInfo = styled.div`
   margin: 10rem 0;
 `
+export const OtherProductContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+`
+export const OtherProduct = styled.div`
+  padding: 5rem 0;
+  display: flex;
+  justify-content: space-around;
+`
+export const OtherProductTitle = styled.h5`
+  ${({ theme }) => css`
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    font-weight: ${theme.font.bold};
+    letter-spacing: 0.1rem;
+    color: ${theme.colors.black};
+    margin-bottom: 2rem;
+  `}
+`

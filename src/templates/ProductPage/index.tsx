@@ -3,6 +3,7 @@ import { Container } from 'components/Container'
 import ContentInfo from 'components/ContentInfo'
 import Footer from 'components/Footer'
 import Menu from 'components/Menu'
+import OtherProduct from 'components/OtherProduct'
 import Product from 'components/Product'
 import ProductInfo from 'components/ProductInfo'
 import * as S from './styles'
@@ -59,6 +60,11 @@ const ProductPage = () => {
     title: 'BRINGING YOU THE <span>BEST</span> AUDIO GEAR',
     text: 'Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.'
   }
+  const otherProduct = {
+    nameProduct: 'XX99 MARK ll',
+    image: '/img/image-product.jpg',
+    link: '/'
+  }
   return (
     <S.Wrapper>
       <S.BlackContent>
@@ -74,11 +80,20 @@ const ProductPage = () => {
         <S.ProductInfo>
           <ProductInfo {...productInfo} />
         </S.ProductInfo>
+        <S.OtherProductContent>
+          <S.OtherProductTitle>YOU MAY ALSO LIKE</S.OtherProductTitle>
+          <S.OtherProduct>
+            <OtherProduct {...otherProduct} />
+            <OtherProduct {...otherProduct} />
+            <OtherProduct {...otherProduct} />
+          </S.OtherProduct>
+        </S.OtherProductContent>
         <S.CategoryCard>
           <CategoryCard {...categoryCard1} />
           <CategoryCard {...categoryCard1} />
           <CategoryCard {...categoryCard1} />
         </S.CategoryCard>
+
         <S.ContentInfo>
           <ContentInfo {...contentInfo} />
         </S.ContentInfo>

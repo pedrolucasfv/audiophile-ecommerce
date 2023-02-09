@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
   height: 100%;
-  width: 30rem;
+  width: 45rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,8 +13,8 @@ type ImageProps = {
 }
 export const Image = styled.div<ImageProps>`
   ${({ src }) => css`
-    height: 30rem;
-    width: 30rem;
+    height: 40rem;
+    width: 40rem;
     background-image: url(${src});
     background-size: contain;
     background-repeat: no-repeat;

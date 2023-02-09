@@ -6,7 +6,8 @@ export default {
   component: OtherProduct,
   args: {
     nameProduct: 'XX99 MARK ll',
-    image: '/img/image-product.jpg'
+    image: '/img/image-product.jpg',
+    link: '/'
   }
 } as Meta
 
