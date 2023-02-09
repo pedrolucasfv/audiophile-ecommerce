@@ -33,7 +33,7 @@ export const Info = styled.div`
 
 export const Title = styled.h5`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xxlarge};
+    font-size: 4.5rem;
     text-transform: uppercase;
     font-weight: ${theme.font.bold};
     letter-spacing: 0.1rem;

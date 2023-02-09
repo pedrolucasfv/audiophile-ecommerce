@@ -67,15 +67,21 @@ const ProductPage = () => {
         </Container>
       </S.BlackContent>
       <Container>
-        <S.Button>Go Back</S.Button>
+        <S.Button>
+          <a>Go Back</a>
+        </S.Button>
         <Product {...product} />
-        <ProductInfo {...productInfo} />
+        <S.ProductInfo>
+          <ProductInfo {...productInfo} />
+        </S.ProductInfo>
         <S.CategoryCard>
           <CategoryCard {...categoryCard1} />
           <CategoryCard {...categoryCard1} />
           <CategoryCard {...categoryCard1} />
         </S.CategoryCard>
-        <ContentInfo {...contentInfo} />
+        <S.ContentInfo>
+          <ContentInfo {...contentInfo} />
+        </S.ContentInfo>
       </Container>
       <S.BlackContent>
         <Container>

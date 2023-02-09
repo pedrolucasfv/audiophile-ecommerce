@@ -23,7 +23,9 @@ export const RightContent = styled.div`
   grid-template-rows: 1fr 2fr;
   `}
 `
-export const LeftContent = styled.div``
+export const LeftContent = styled.div`
+  width: 80%;
+`
 export const Title = styled.h2`
   ${({ theme }) => css`
     text-transform: uppercase;

@@ -18,12 +18,11 @@ type ImageProps = {
 export const Image = styled.div<ImageProps>`
   ${({ src }) => css`
     margin-top: -5rem;
-    height: 10rem;
-    width: 10rem;
+    height: 15rem;
+    width: 15rem;
     background-image: url(${src});
     background-size: contain;
     background-repeat: no-repeat;
-    box-shadow: 0px 2rem 3.5rem 0.3rem rgba(0, 0, 0, 0.5);
   `}
 `
 
@@ -34,6 +33,7 @@ export const Title = styled.h5`
     font-weight: ${theme.font.bold};
     letter-spacing: 0.1rem;
     color: ${theme.colors.black};
+    margin-top: -5rem;
   `}
 `
 
