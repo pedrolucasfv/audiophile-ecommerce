@@ -33,11 +33,6 @@ export default [
           quantity: 1
         }
       ]
-    },
-    categoryCard: {
-      image: '/img/image-headphones.png',
-      link: '/',
-      title: 'HEADPHONES'
     }
   },
   {
@@ -69,11 +64,6 @@ export default [
           quantity: 1
         }
       ]
-    },
-    categoryCard: {
-      image: '/img/image-headphones.png',
-      link: '/',
-      title: 'HEADPHONES'
     }
   },
   {
@@ -105,11 +95,6 @@ export default [
           quantity: 1
         }
       ]
-    },
-    categoryCard: {
-      image: '/img/image-headphones.png',
-      link: '/',
-      title: 'HEADPHONES'
     }
   }
 ]

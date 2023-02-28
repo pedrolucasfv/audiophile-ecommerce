@@ -18,7 +18,7 @@ const ProductInfo = ({ items, text }: ProductInfoProps) => (
     <S.RightContent>
       <S.Title>IN THE BOX</S.Title>
       <S.Items>
-        {items.map((value) => (
+        {items?.map((value) => (
           <>
             <S.Item>
               <span>{value.quantity}x</span>

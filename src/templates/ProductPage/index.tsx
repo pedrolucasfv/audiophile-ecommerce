@@ -4,44 +4,16 @@ import ContentInfo from 'components/ContentInfo'
 import Footer from 'components/Footer'
 import Menu from 'components/Menu'
 import OtherProduct from 'components/OtherProduct'
-import Product from 'components/Product'
-import ProductInfo from 'components/ProductInfo'
+import Product, { ProductProps } from 'components/Product'
+import ProductInfo, { ProductInfoProps } from 'components/ProductInfo'
 import * as S from './styles'
 
-const ProductPage = () => {
-  const product = {
-    title: 'new product',
-    name: 'XX99 MARK ll HEADPHONES',
-    description:
-      'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
-    price: 2.999,
-    image: '/img/image-product.jpg'
-  }
-  const productInfo = {
-    text: 'Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.',
-    items: [
-      {
-        item: 'Headphone Unit',
-        quantity: 1
-      },
-      {
-        item: 'Replacement Earcups',
-        quantity: 2
-      },
-      {
-        item: 'User Manual',
-        quantity: 1
-      },
-      {
-        item: '3.5mm 5m Audio Cable',
-        quantity: 1
-      },
-      {
-        item: 'Travel Bag',
-        quantity: 1
-      }
-    ]
-  }
+export type ProductPageProps = {
+  product: ProductProps
+  productInfo: ProductInfoProps
+}
+
+const ProductPage = ({ product, productInfo }: ProductPageProps) => {
   const categoryCard1 = {
     image: '/img/image-headphones.png',
     link: '/',

@@ -1,5 +1,5 @@
-import ProductPage from 'templates/ProductPage'
+import Home from 'templates/Home'
 
 export default function HomePage() {
-  return <ProductPage />
+  return <Home />
 }
