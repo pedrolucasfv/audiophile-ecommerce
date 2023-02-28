@@ -3,6 +3,7 @@ export default [
     slug: 'headphones',
     banners: [
       {
+        slug: 'XX99-MARK-II-HEADPHONES',
         title: 'new product',
         nameProduct: 'XX99 MARK II HEADPHONES',
         color: 'none' as 'black' | 'primary' | 'white' | 'none',
@@ -11,6 +12,7 @@ export default [
         image: '/img/image-product.jpg'
       },
       {
+        slug: 'XX59-HEADPHONES',
         nameProduct: 'XX59 HEADPHONES',
         color: 'none' as 'black' | 'primary' | 'white' | 'none',
         description:
@@ -18,6 +20,7 @@ export default [
         image: '/img/product-xx59-headphones/desktop/image-product.jpg'
       },
       {
+        slug: 'XX99-MARK-I-HEADPHONES',
         nameProduct: 'XX99 MARK I HEADPHONES',
         color: 'none' as 'black' | 'primary' | 'white' | 'none',
         description:
