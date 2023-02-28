@@ -6,18 +6,10 @@ import Footer from 'components/Footer'
 import Menu from 'components/Menu'
 import { useRouter } from 'next/router'
 import * as S from './styles'
+import bannerMock from 'templates/Category/mock'
 
 const Category = () => {
   const router = useRouter()
-
-  const banner = {
-    title: 'new product',
-    nameProduct: 'XX99 MARK II HEADPHONES',
-    color: 'none' as 'black' | 'primary' | 'white' | 'none',
-    description:
-      'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.',
-    image: '/img/image-product.jpg'
-  }
   const categoryCard1 = {
     image: '/img/image-headphones.png',
     link: '/',
@@ -47,9 +39,9 @@ const Category = () => {
       </S.BlackContent>
       <Container>
         <S.BannerContent>
-          <Banner {...banner} invert />
-          <Banner {...banner} />
-          <Banner {...banner} invert />
+          <Banner {...bannerMock[0].banners[0]} invert />
+          <Banner {...bannerMock[0].banners[1]} />
+          <Banner {...bannerMock[0].banners[2]} invert />
         </S.BannerContent>
         <S.CategoryCard>
           <CategoryCard {...categoryCard1} />
