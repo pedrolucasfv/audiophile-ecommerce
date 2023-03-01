@@ -43,7 +43,7 @@ const ProductPage = ({ product, productInfo }: ProductPageProps) => {
         </Container>
       </S.BlackContent>
       <Container>
-        <S.Button>
+        <S.Button onClick={() => window.history.back()}>
           <a>Go Back</a>
         </S.Button>
         <Product {...product} />
