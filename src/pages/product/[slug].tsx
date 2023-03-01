@@ -5,7 +5,10 @@ import PagesMock from 'templates/ProductPage/mock'
 export const slugs = [
   'XX99-MARK-II-HEADPHONES',
   'XX59-HEADPHONES',
-  'XX99-MARK-I-HEADPHONES'
+  'XX99-MARK-I-HEADPHONES',
+  'ZX9-SPEAKER',
+  'ZX7-SPEAKER',
+  'YX1-WIRELESS-EARPHONES'
 ]
 
 export default function Index(props: ProductPageProps) {

@@ -1,4 +1,4 @@
-import Banner from 'components/Banner'
+import Banner, { BannerProps } from 'components/Banner'
 import CategoryCard from 'components/CategoryCard'
 import { Container } from 'components/Container'
 import ContentInfo from 'components/ContentInfo'
@@ -6,12 +6,15 @@ import Footer from 'components/Footer'
 import Menu from 'components/Menu'
 import { useRouter } from 'next/router'
 
-import bannerMock from 'templates/Category/mock'
 import categoryCardMock from 'components/CategoryCard/mock'
 
 import * as S from './styles'
 
-const Category = () => {
+export type CategoryPageProps = {
+  banners: BannerProps[]
+}
+
+const Category = ({ banners }: CategoryPageProps) => {
   const router = useRouter()
   const contentInfo = {
     image: '/img/image-best-gear.jpg',
@@ -37,9 +40,11 @@ const Category = () => {
       </S.BlackContent>
       <Container>
         <S.BannerContent>
-          <Banner {...bannerMock[0].banners[0]} invert />
-          <Banner {...bannerMock[0].banners[1]} />
-          <Banner {...bannerMock[0].banners[2]} invert />
+          {banners?.map((banner, index) => (
+            <div key={index}>
+              <Banner {...banner} />
+            </div>
+          ))}
         </S.BannerContent>
         <S.CategoryCard>
           <CategoryCard {...categoryCardMock[0]} />
