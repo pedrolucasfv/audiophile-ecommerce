@@ -15,7 +15,7 @@ export const Title = styled.h4`
     font-size: 4rem;
     position: absolute;
     bottom: 25%;
-    right: 45%;
+    left: 40%;
     text-transform: uppercase;
   `}
 `
