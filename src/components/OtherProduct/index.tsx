@@ -2,16 +2,16 @@ import Button from 'components/Button'
 import * as S from './styles'
 
 export type OtherProductProps = {
-  nameProduct: string
+  name: string
   image: string
-  link: string
+  slug: string
 }
 
-const OtherProduct = ({ image, nameProduct, link }: OtherProductProps) => (
+const OtherProduct = ({ image, name, slug }: OtherProductProps) => (
   <S.Wrapper>
     <S.Image src={image} role="img" aria-label="Product Image" />
-    <S.NameProduct>{nameProduct}</S.NameProduct>
-    <Button text="SEE PRODUCT" link={link} />
+    <S.NameProduct>{name}</S.NameProduct>
+    <Button text="SEE PRODUCT" link={slug} />
   </S.Wrapper>
 )
 

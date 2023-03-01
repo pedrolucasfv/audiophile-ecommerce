@@ -4,9 +4,9 @@ import OtherProduct from '.'
 import { renderWithTheme } from '../../../utils/tests/helpers'
 
 const args = {
-  nameProduct: 'XX99 MARK ll',
+  name: 'XX99 MARK ll',
   image: '/img/image-product.jpg',
-  link: '/'
+  slug: '/'
 }
 
 describe('<OtherProduct />', () => {

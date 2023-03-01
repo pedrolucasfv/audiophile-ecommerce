@@ -3,7 +3,7 @@ import { Container } from 'components/Container'
 import ContentInfo from 'components/ContentInfo'
 import Footer from 'components/Footer'
 import Menu from 'components/Menu'
-import OtherProduct from 'components/OtherProduct'
+import OtherProduct, { OtherProductProps } from 'components/OtherProduct'
 import Product, { ProductProps } from 'components/Product'
 import ProductInfo, { ProductInfoProps } from 'components/ProductInfo'
 
@@ -14,9 +14,14 @@ import * as S from './styles'
 export type ProductPageProps = {
   product: ProductProps
   productInfo: ProductInfoProps
+  otherProduct: OtherProductProps[]
 }
 
-const ProductPage = ({ product, productInfo }: ProductPageProps) => {
+const ProductPage = ({
+  product,
+  productInfo,
+  otherProduct
+}: ProductPageProps) => {
   const footer = {
     text: 'Audiophile is an all in one stop to fulfill your audio needs. We are a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we are open 7 days a week.',
     socialNetworks: {
@@ -29,11 +34,6 @@ const ProductPage = ({ product, productInfo }: ProductPageProps) => {
     image: '/img/image-best-gear.jpg',
     title: 'BRINGING YOU THE <span>BEST</span> AUDIO GEAR',
     text: 'Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.'
-  }
-  const otherProduct = {
-    nameProduct: 'XX99 MARK ll',
-    image: '/img/image-product.jpg',
-    link: '/'
   }
   return (
     <S.Wrapper>
@@ -53,9 +53,11 @@ const ProductPage = ({ product, productInfo }: ProductPageProps) => {
         <S.OtherProductContent>
           <S.OtherProductTitle>YOU MAY ALSO LIKE</S.OtherProductTitle>
           <S.OtherProduct>
-            <OtherProduct {...otherProduct} />
-            <OtherProduct {...otherProduct} />
-            <OtherProduct {...otherProduct} />
+            {otherProduct.map((item, index) => (
+              <div key={index}>
+                <OtherProduct {...item} />
+              </div>
+            ))}
           </S.OtherProduct>
         </S.OtherProductContent>
         <S.CategoryCard>
