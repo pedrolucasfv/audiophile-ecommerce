@@ -8,10 +8,10 @@ export default function HomePage(props: HomeProps) {
 export async function getStaticProps() {
   return {
     props: {
-      mainBanner: HomeMock[0],
-      secondBanner: HomeMock[1],
-      thirdBanner: HomeMock[2],
-      simpleBanner: HomeMock[3]
+      mainBanner: HomeMock[0].mainBanner,
+      secondBanner: HomeMock[0].secondBanner,
+      thirdBanner: HomeMock[0].thirdBanner,
+      simpleBanner: HomeMock[0].simpleBanner
     }
   }
 }

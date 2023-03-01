@@ -33,7 +33,25 @@ export default [
           quantity: 1
         }
       ]
-    }
+    },
+    otherProduct: [
+      {
+        name: 'XX59 HEADPHONES',
+        image: '/img/product-xx59-headphones/desktop/image-product.jpg',
+        slug: 'XX59-HEADPHONES'
+      },
+      {
+        name: 'XX99 MARK I HEADPHONES',
+        image:
+          '/img/product-xx99-mark-one-headphones/desktop/image-product.jpg',
+        slug: 'XX99-MARK-I-HEADPHONES'
+      },
+      {
+        name: 'ZX9 SPEAKER',
+        image: '/img/product-zx9-speaker/desktop/image-product.jpg',
+        slug: 'ZX9-SPEAKER'
+      }
+    ]
   },
   {
     slug: 'XX59-HEADPHONES',
@@ -64,7 +82,25 @@ export default [
           quantity: 1
         }
       ]
-    }
+    },
+    otherProduct: [
+      {
+        name: 'XX99 MARK II HEADPHONES',
+        image: '/img/image-product.jpg',
+        slug: 'XX99-MARK-II-HEADPHONES'
+      },
+      {
+        name: 'XX99 MARK I HEADPHONES',
+        image:
+          '/img/product-xx99-mark-one-headphones/desktop/image-product.jpg',
+        slug: 'XX99-MARK-I-HEADPHONES'
+      },
+      {
+        name: 'ZX9 SPEAKER',
+        image: '/img/product-zx9-speaker/desktop/image-product.jpg',
+        slug: 'ZX9-SPEAKER'
+      }
+    ]
   },
   {
     slug: 'XX99-MARK-I-HEADPHONES',
@@ -95,7 +131,24 @@ export default [
           quantity: 1
         }
       ]
-    }
+    },
+    otherProduct: [
+      {
+        name: 'XX99 MARK II HEADPHONES',
+        image: '/img/image-product.jpg',
+        slug: 'XX99-MARK-II-HEADPHONES'
+      },
+      {
+        name: 'XX59 HEADPHONES',
+        image: '/img/product-xx59-headphones/desktop/image-product.jpg',
+        slug: 'XX59-HEADPHONES'
+      },
+      {
+        name: 'ZX9 SPEAKER',
+        image: '/img/product-zx9-speaker/desktop/image-product.jpg',
+        slug: 'ZX9-SPEAKER'
+      }
+    ]
   },
   {
     slug: 'ZX9-SPEAKER',
@@ -131,7 +184,24 @@ export default [
           quantity: 1
         }
       ]
-    }
+    },
+    otherProduct: [
+      {
+        name: 'YX1 WIRELESS EARPHONES',
+        image: '/img/product-yx1-earphones/desktop/image-product.jpg',
+        slug: 'YX1-WIRELESS-EARPHONES'
+      },
+      {
+        name: 'XX59 HEADPHONES',
+        image: '/img/product-xx59-headphones/desktop/image-product.jpg',
+        slug: 'XX59-HEADPHONES'
+      },
+      {
+        name: 'ZX7 SPEAKER',
+        image: '/img/product-zx7-speaker/desktop/image-product.jpg',
+        slug: 'ZX7-SPEAKER'
+      }
+    ]
   },
   {
     slug: 'ZX7-SPEAKER',
@@ -167,7 +237,24 @@ export default [
           quantity: 1
         }
       ]
-    }
+    },
+    otherProduct: [
+      {
+        name: 'XX99 MARK II HEADPHONES',
+        image: '/img/image-product.jpg',
+        slug: 'XX99-MARK-II-HEADPHONES'
+      },
+      {
+        name: 'YX1 WIRELESS EARPHONES',
+        image: '/img/product-yx1-earphones/desktop/image-product.jpg',
+        slug: 'YX1-WIRELESS-EARPHONES'
+      },
+      {
+        name: 'ZX9 SPEAKER',
+        image: '/img/product-zx9-speaker/desktop/image-product.jpg',
+        slug: 'ZX9-SPEAKER'
+      }
+    ]
   },
   {
     slug: 'YX1-WIRELESS-EARPHONES',
@@ -203,6 +290,23 @@ export default [
           quantity: 1
         }
       ]
-    }
+    },
+    otherProduct: [
+      {
+        name: 'XX99 MARK II HEADPHONES',
+        image: '/img/image-product.jpg',
+        slug: 'XX99-MARK-II-HEADPHONES'
+      },
+      {
+        name: 'XX59 HEADPHONES',
+        image: '/img/product-xx59-headphones/desktop/image-product.jpg',
+        slug: 'XX59-HEADPHONES'
+      },
+      {
+        name: 'ZX7 SPEAKER',
+        image: '/img/product-zx7-speaker/desktop/image-product.jpg',
+        slug: 'ZX7-SPEAKER'
+      }
+    ]
   }
 ]

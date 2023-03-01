@@ -2,9 +2,10 @@
 
 import Home from '.'
 import { renderWithTheme } from '../../../utils/tests/helpers'
+import HomePageMock from './mock'
 
 describe('<Home />', () => {
   it('should render the heading', () => {
-    renderWithTheme(<Home />)
+    renderWithTheme(<Home {...HomePageMock[0]} />)
   })
 })
