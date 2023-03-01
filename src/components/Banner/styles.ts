@@ -69,6 +69,9 @@ export const Info = styled.div`
     align-items: flex-start;
     flex-direction: column;
     padding: ${theme.spacings.large};
+    a {
+      text-decoration: none;
+    }
   `}
 `
 
@@ -83,7 +86,7 @@ const titleModifiers = {
     color: ${theme.colors.darkGray};
   `,
   none: (theme: DefaultTheme) => css`
-    color: ${theme.colors.darkGray};
+    color: ${theme.colors.accent};
   `
 }
 export const Title = styled.h4<ColorProps>`

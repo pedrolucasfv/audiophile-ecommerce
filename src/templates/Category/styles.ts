@@ -30,5 +30,6 @@ export const CategoryCard = styled.div`
   justify-content: space-between;
 `
 export const Content = styled.div`
-  padding: 20rem 10rem;
+  padding: 10rem;
+  padding-bottom: 20rem;
 `

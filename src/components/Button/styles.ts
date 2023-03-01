@@ -42,7 +42,6 @@ export const Wrapper = styled.a<ColorProps>`
     cursor: pointer;
     padding: ${theme.spacings.xsmall} ${theme.spacings.medium};
     text-decoration: none;
-
     ${color && wrapperModifiers[color](theme)}
   `}
 `
