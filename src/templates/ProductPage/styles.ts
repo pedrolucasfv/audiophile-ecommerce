@@ -32,6 +32,11 @@ export const ProductInfo = styled.div`
 export const ContentInfo = styled.div`
   margin: 10rem 0;
 `
+
+export const Gallery = styled.div`
+  margin: 10rem 0rem;
+`
+
 export const OtherProductContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -43,6 +48,7 @@ export const OtherProduct = styled.div`
   display: flex;
   justify-content: space-around;
 `
+
 export const OtherProductTitle = styled.h5`
   ${({ theme }) => css`
     font-size: 4.5rem;

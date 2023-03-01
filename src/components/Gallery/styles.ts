@@ -7,6 +7,7 @@ type ImageProps = {
 export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-gap: 3rem;
 `
 
 export const LeftContent = styled.div`
@@ -24,7 +25,7 @@ export const ImageBox = styled.div<ImageProps>`
     background: url(${src});
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 1rem;
+    border-radius: 0.8rem;
   `}
 `
 
@@ -35,6 +36,6 @@ export const MainImage = styled.div<ImageProps>`
     background: url(${src});
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 1rem;
+    border-radius: 0.8rem;
   `}
 `

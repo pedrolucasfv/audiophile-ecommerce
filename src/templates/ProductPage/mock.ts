@@ -51,7 +51,15 @@ export default [
         image: '/img/product-zx9-speaker/desktop/image-product.jpg',
         slug: 'ZX9-SPEAKER'
       }
-    ]
+    ],
+    gallery: {
+      firstImage:
+        '/img/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg',
+      secondImage:
+        '/img/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg',
+      thirdImage:
+        '/img/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg'
+    }
   },
   {
     slug: 'XX59-HEADPHONES',
@@ -100,7 +108,12 @@ export default [
         image: '/img/product-zx9-speaker/desktop/image-product.jpg',
         slug: 'ZX9-SPEAKER'
       }
-    ]
+    ],
+    gallery: {
+      firstImage: '/img/product-xx59-headphones/desktop/image-gallery-1.jpg',
+      secondImage: '/img/product-xx59-headphones/desktop/image-gallery-2.jpg',
+      thirdImage: '/img/product-xx59-headphones/desktop/image-gallery-3.jpg'
+    }
   },
   {
     slug: 'XX99-MARK-I-HEADPHONES',
@@ -148,7 +161,15 @@ export default [
         image: '/img/product-zx9-speaker/desktop/image-product.jpg',
         slug: 'ZX9-SPEAKER'
       }
-    ]
+    ],
+    gallery: {
+      firstImage:
+        '/img/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg',
+      secondImage:
+        '/img/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg',
+      thirdImage:
+        '/img/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg'
+    }
   },
   {
     slug: 'ZX9-SPEAKER',
@@ -201,7 +222,12 @@ export default [
         image: '/img/product-zx7-speaker/desktop/image-product.jpg',
         slug: 'ZX7-SPEAKER'
       }
-    ]
+    ],
+    gallery: {
+      firstImage: '/img/product-zx9-speaker/desktop/image-gallery-1.jpg',
+      secondImage: '/img/product-zx9-speaker/desktop/image-gallery-2.jpg',
+      thirdImage: '/img/product-zx9-speaker/desktop/image-gallery-3.jpg'
+    }
   },
   {
     slug: 'ZX7-SPEAKER',
@@ -254,7 +280,12 @@ export default [
         image: '/img/product-zx9-speaker/desktop/image-product.jpg',
         slug: 'ZX9-SPEAKER'
       }
-    ]
+    ],
+    gallery: {
+      firstImage: '/img/product-zx7-speaker/desktop/image-gallery-1.jpg',
+      secondImage: '/img/product-zx7-speaker/desktop/image-gallery-2.jpg',
+      thirdImage: '/img/product-zx7-speaker/desktop/image-gallery-3.jpg'
+    }
   },
   {
     slug: 'YX1-WIRELESS-EARPHONES',
@@ -307,6 +338,11 @@ export default [
         image: '/img/product-zx7-speaker/desktop/image-product.jpg',
         slug: 'ZX7-SPEAKER'
       }
-    ]
+    ],
+    gallery: {
+      firstImage: '/img/product-yx1-earphones/desktop/image-gallery-1.jpg',
+      secondImage: '/img/product-yx1-earphones/desktop/image-gallery-2.jpg',
+      thirdImage: '/img/product-yx1-earphones/desktop/image-gallery-3.jpg'
+    }
   }
 ]

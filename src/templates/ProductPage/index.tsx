@@ -10,17 +10,20 @@ import ProductInfo, { ProductInfoProps } from 'components/ProductInfo'
 import categoryCardMock from 'components/CategoryCard/mock'
 
 import * as S from './styles'
+import Gallery, { GalleryProps } from 'components/Gallery'
 
 export type ProductPageProps = {
   product: ProductProps
   productInfo: ProductInfoProps
   otherProduct: OtherProductProps[]
+  gallery: GalleryProps
 }
 
 const ProductPage = ({
   product,
   productInfo,
-  otherProduct
+  otherProduct,
+  gallery
 }: ProductPageProps) => {
   const footer = {
     text: 'Audiophile is an all in one stop to fulfill your audio needs. We are a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we are open 7 days a week.',
@@ -50,6 +53,9 @@ const ProductPage = ({
         <S.ProductInfo>
           <ProductInfo {...productInfo} />
         </S.ProductInfo>
+        <S.Gallery>
+          <Gallery {...gallery} />
+        </S.Gallery>
         <S.OtherProductContent>
           <S.OtherProductTitle>YOU MAY ALSO LIKE</S.OtherProductTitle>
           <S.OtherProduct>

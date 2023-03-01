@@ -23,7 +23,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       product: page[0].product,
       productInfo: page[0].productInfo,
-      otherProduct: page[0].otherProduct
+      otherProduct: page[0].otherProduct,
+      gallery: page[0].gallery
     }
   }
 }
