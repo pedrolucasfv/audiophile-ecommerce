@@ -4,17 +4,23 @@ import { Container } from 'components/Container'
 import ContentInfo from 'components/ContentInfo'
 import Footer from 'components/Footer'
 import Menu from 'components/Menu'
+import { BannerProps } from '../../components/Banner'
 
 import * as S from './styles'
 
-const Home = () => {
-  const banner = {
-    nameProduct: 'XX99 MARK II HEADPHONES',
-    color: 'black' as 'black' | 'primary' | 'white',
-    description:
-      'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.',
-    image: '/img/image-hero.jpg'
-  }
+export type HomeProps = {
+  mainBanner: BannerProps
+  secondBanner: BannerProps
+  thirdBanner: BannerProps
+  simpleBanner: BannerProps
+}
+
+const Home = ({
+  mainBanner,
+  secondBanner,
+  simpleBanner,
+  thirdBanner
+}: HomeProps) => {
   const categoryCard1 = {
     image: '/img/image-headphones.png',
     link: '/',
@@ -40,7 +46,7 @@ const Home = () => {
       <S.BlackContent>
         <Container>
           <Menu />
-          <Banner {...banner} title="new product" />
+          <Banner {...mainBanner} />
         </Container>
       </S.BlackContent>
       <Container>
@@ -50,13 +56,9 @@ const Home = () => {
           <CategoryCard {...categoryCard1} />
         </S.CategoryCard>
         <S.BannerContent>
-          <Banner {...banner} invert />
-          <Banner
-            nameProduct={banner.nameProduct}
-            color="white"
-            image="/img/image-product.jpg"
-          />
-          <Banner nameProduct="YX1 EARPHONES" />
+          <Banner {...secondBanner} invert withSVG />
+          <Banner {...thirdBanner} />
+          <Banner {...simpleBanner} />
         </S.BannerContent>
         <S.Content>
           <ContentInfo {...contentInfo} />
