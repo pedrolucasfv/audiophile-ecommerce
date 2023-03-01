@@ -5,12 +5,25 @@ type ColorProps = {
 }
 type WrapperProps = {
   invert: boolean
+  withSvg: boolean
 } & ColorProps
 
 const wrapperModifiers = {
   primary: (theme: DefaultTheme) => css`
+    height: 60rem;
+    width: 100%;
     color: ${theme.colors.white};
     background-color: ${theme.colors.accent};
+    ${ImageBox} {
+      height: 45rem;
+      width: 45rem;
+      position: absolute;
+      bottom: 0%;
+      left: 10%;
+    }
+    ${Description} {
+      color: ${theme.colors.white};
+    }
   `,
   white: (theme: DefaultTheme) => css`
     color: ${theme.colors.black};
@@ -26,14 +39,27 @@ const wrapperModifiers = {
   `,
   invert: () => css`
     direction: rtl;
+  `,
+  withSvg: () => css`
+    svg {
+      display: block;
+      position: absolute;
+      left: -10%;
+      z-index: 0;
+    }
   `
 }
 export const Wrapper = styled.main<WrapperProps>`
-  ${({ theme, color, invert }) => css`
+  ${({ theme, color, invert, withSvg }) => css`
     display: grid;
     grid-template-columns: 1fr 1fr;
     ${invert && wrapperModifiers.invert()}
     ${color && wrapperModifiers[color](theme)}
+    position: relative;
+    svg {
+      display: none;
+    }
+    ${withSvg && wrapperModifiers.withSvg}
   `}
 `
 export const Info = styled.div`
