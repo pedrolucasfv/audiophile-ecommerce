@@ -6,6 +6,8 @@ import Footer from 'components/Footer'
 import Menu from 'components/Menu'
 import { BannerProps } from '../../components/Banner'
 
+import categoryCardMock from 'components/CategoryCard/mock'
+
 import * as S from './styles'
 
 export type HomeProps = {
@@ -21,11 +23,6 @@ const Home = ({
   simpleBanner,
   thirdBanner
 }: HomeProps) => {
-  const categoryCard1 = {
-    image: '/img/image-headphones.png',
-    link: '/',
-    title: 'HEADPHONES'
-  }
   const contentInfo = {
     image: '/img/image-best-gear.jpg',
     title: 'BRINGING YOU THE <span>BEST</span> AUDIO GEAR',
@@ -51,9 +48,9 @@ const Home = ({
       </S.BlackContent>
       <Container>
         <S.CategoryCard>
-          <CategoryCard {...categoryCard1} />
-          <CategoryCard {...categoryCard1} />
-          <CategoryCard {...categoryCard1} />
+          <CategoryCard {...categoryCardMock[0]} />
+          <CategoryCard {...categoryCardMock[1]} />
+          <CategoryCard {...categoryCardMock[2]} />
         </S.CategoryCard>
         <S.BannerContent>
           <Banner {...secondBanner} invert withSVG />

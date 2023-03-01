@@ -6,6 +6,9 @@ import Menu from 'components/Menu'
 import OtherProduct from 'components/OtherProduct'
 import Product, { ProductProps } from 'components/Product'
 import ProductInfo, { ProductInfoProps } from 'components/ProductInfo'
+
+import categoryCardMock from 'components/CategoryCard/mock'
+
 import * as S from './styles'
 
 export type ProductPageProps = {
@@ -14,11 +17,6 @@ export type ProductPageProps = {
 }
 
 const ProductPage = ({ product, productInfo }: ProductPageProps) => {
-  const categoryCard1 = {
-    image: '/img/image-headphones.png',
-    link: '/',
-    title: 'HEADPHONES'
-  }
   const footer = {
     text: 'Audiophile is an all in one stop to fulfill your audio needs. We are a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we are open 7 days a week.',
     socialNetworks: {
@@ -61,9 +59,9 @@ const ProductPage = ({ product, productInfo }: ProductPageProps) => {
           </S.OtherProduct>
         </S.OtherProductContent>
         <S.CategoryCard>
-          <CategoryCard {...categoryCard1} />
-          <CategoryCard {...categoryCard1} />
-          <CategoryCard {...categoryCard1} />
+          <CategoryCard {...categoryCardMock[0]} />
+          <CategoryCard {...categoryCardMock[1]} />
+          <CategoryCard {...categoryCardMock[2]} />
         </S.CategoryCard>
 
         <S.ContentInfo>

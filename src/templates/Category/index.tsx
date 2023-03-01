@@ -5,16 +5,14 @@ import ContentInfo from 'components/ContentInfo'
 import Footer from 'components/Footer'
 import Menu from 'components/Menu'
 import { useRouter } from 'next/router'
-import * as S from './styles'
+
 import bannerMock from 'templates/Category/mock'
+import categoryCardMock from 'components/CategoryCard/mock'
+
+import * as S from './styles'
 
 const Category = () => {
   const router = useRouter()
-  const categoryCard1 = {
-    image: '/img/image-headphones.png',
-    link: '/',
-    title: 'HEADPHONES'
-  }
   const contentInfo = {
     image: '/img/image-best-gear.jpg',
     title: 'BRINGING YOU THE <span>BEST</span> AUDIO GEAR',
@@ -44,9 +42,9 @@ const Category = () => {
           <Banner {...bannerMock[0].banners[2]} invert />
         </S.BannerContent>
         <S.CategoryCard>
-          <CategoryCard {...categoryCard1} />
-          <CategoryCard {...categoryCard1} />
-          <CategoryCard {...categoryCard1} />
+          <CategoryCard {...categoryCardMock[0]} />
+          <CategoryCard {...categoryCardMock[1]} />
+          <CategoryCard {...categoryCardMock[2]} />
         </S.CategoryCard>
         <S.Content>
           <ContentInfo {...contentInfo} />
