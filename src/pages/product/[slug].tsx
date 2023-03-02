@@ -10,9 +10,8 @@ export async function getStaticPaths() {
   const slugs = PagesMock.map((pageMock) => {
     return pageMock.slug
   })
-  console.log(slugs)
   const paths = slugs.map((slug) => ({ params: { slug } }))
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
