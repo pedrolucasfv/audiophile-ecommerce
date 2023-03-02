@@ -1,8 +1,19 @@
 ## Project
-This is a dinamic landing page with Strapi CMS and GraphQL.
+This is e-commerce audiophile, a frontend mentor challenge. This project has scalable components, with unit tests and dinamic pages. 
 
 This project use a boilerplate of a course called [React Avançado](https://reactavancado.com.br/).
 ![ci](https://github.com/React-Avancado/boilerplate/workflows/ci/badge.svg)
+
+there are "mocks.ts" on the page folders, you can change them to change categories and products. 
+
+Deploy: https://audiophile-ecommerce-ols5.vercel.app/
+
+### Screenshots
+
+##### Video
+<p align="center">
+    <video width= "702px" height="362px" src="/public/img/screenshots/audiophile-screen.mp4">
+</p>
 
 ### Notion
 I have decided to create a "notion" for each project I do, in order to have a record and details of projects.
@@ -21,19 +32,6 @@ This project uses lot of stuff as:
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 ## Commands
 
