@@ -6,6 +6,7 @@ type ColorProps = {
 type WrapperProps = {
   invert: boolean
   withSvg: boolean
+  halfHeight: boolean
 } & ColorProps
 
 const wrapperModifiers = {
@@ -47,19 +48,34 @@ const wrapperModifiers = {
       left: -10%;
       z-index: 0;
     }
+  `,
+  halfHeight: () => css`
+    height: 30rem;
+    ${NameProduct} {
+      font-size: 3.5rem;
+    }
+    ${ImageBox} {
+      height: 100%;
+      width: 45rem;
+    }
+    ${Info} {
+      height: 30rem;
+    }
   `
 }
 export const Wrapper = styled.main<WrapperProps>`
-  ${({ theme, color, invert, withSvg }) => css`
+  ${({ theme, color, invert, withSvg, halfHeight }) => css`
     display: grid;
     grid-template-columns: 1fr 1fr;
     ${invert && wrapperModifiers.invert()}
     ${color && wrapperModifiers[color](theme)}
     position: relative;
+    ${halfHeight && wrapperModifiers.halfHeight}
     svg {
       display: none;
     }
     ${withSvg && wrapperModifiers.withSvg}
+    overflow: hidden;
   `}
 `
 export const Info = styled.div`
@@ -119,6 +135,6 @@ export const ImageBox = styled.div`
   img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    //object-fit: cover;
   }
 `

@@ -18,15 +18,16 @@ export default [
       image: '/img/home/desktop/image-speaker-zx9.png'
     },
     thirdBanner: {
-      slug: 'XX99-MARK-I-HEADPHONES',
-      nameProduct: 'XX99 MARK I HEADPHONES',
+      slug: 'ZX7-SPEAKER',
+      nameProduct: 'ZX7 SPEAKER',
       color: 'white' as 'black' | 'primary' | 'white' | 'none',
-      image: '/img/product-xx99-mark-one-headphones/desktop/image-product.jpg'
+      image: '/img/image-zx7-speaker.jpg'
     },
     simpleBanner: {
-      slug: 'XX99-MARK-I-HEADPHONES',
-      nameProduct: 'XX99 MARK I HEADPHONES',
-      color: 'white' as 'black' | 'primary' | 'white' | 'none'
+      slug: 'YX1-WIRELESS-EARPHONES',
+      nameProduct: 'YX1 WIRELESS EARPHONES',
+      color: 'white' as 'black' | 'primary' | 'white' | 'none',
+      image: '/img/home/desktop/image-earphones-yx1.jpg'
     }
   }
 ]

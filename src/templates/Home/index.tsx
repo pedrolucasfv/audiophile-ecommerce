@@ -54,8 +54,17 @@ const Home = ({
         </S.CategoryCard>
         <S.BannerContent>
           <Banner {...secondBanner} invert withSVG />
-          <Banner {...thirdBanner} />
-          <Banner {...simpleBanner} />
+          <Banner {...thirdBanner} halfHeight />
+          <S.SimpleBanner>
+            <S.ImageBox src={simpleBanner.image} />
+            <Banner
+              color={simpleBanner.color}
+              nameProduct={simpleBanner.nameProduct}
+              slug={simpleBanner.slug}
+              halfHeight
+              invert
+            />
+          </S.SimpleBanner>
         </S.BannerContent>
         <S.Content>
           <ContentInfo {...contentInfo} />

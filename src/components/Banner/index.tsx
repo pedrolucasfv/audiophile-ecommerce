@@ -13,6 +13,7 @@ export type BannerProps = {
   invert?: boolean
   color?: 'primary' | 'white' | 'black' | 'none'
   withSVG?: boolean
+  halfHeight?: boolean
 }
 
 const Banner = ({
@@ -23,7 +24,8 @@ const Banner = ({
   title,
   invert = false,
   color = 'black',
-  withSVG = false
+  withSVG = false,
+  halfHeight = false
 }: BannerProps) => {
   const [buttonColor, setButtonColor] = useState<'black' | 'white' | 'primary'>(
     'black'
@@ -38,7 +40,12 @@ const Banner = ({
   }, [color])
 
   return (
-    <S.Wrapper color={color} invert={invert} withSvg={withSVG}>
+    <S.Wrapper
+      color={color}
+      invert={invert}
+      withSvg={withSVG}
+      halfHeight={halfHeight}
+    >
       <S.Info>
         <S.Title color={color}>{title}</S.Title>
         <S.NameProduct>{nameProduct}</S.NameProduct>
