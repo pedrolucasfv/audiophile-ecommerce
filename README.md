@@ -10,10 +10,7 @@ Deploy: https://audiophile-ecommerce-ols5.vercel.app/
 
 ### Screenshots
 
-##### Video
-<p align="center">
-    <video width= "702px" height="362px" src="/public/img/screenshots/audiophile-screen.mp4">
-</p>
+https://user-images.githubusercontent.com/40443060/222538487-8b1dc296-0407-4625-9ebf-5ffeecedb159.mp4
 
 ### Notion
 I have decided to create a "notion" for each project I do, in order to have a record and details of projects.
