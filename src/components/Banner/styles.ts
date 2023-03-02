@@ -15,13 +15,6 @@ const wrapperModifiers = {
     width: 100%;
     color: ${theme.colors.white};
     background-color: ${theme.colors.accent};
-    ${ImageBox} {
-      height: 45rem;
-      width: 45rem;
-      position: absolute;
-      bottom: 0%;
-      left: 10%;
-    }
     ${Description} {
       color: ${theme.colors.white};
     }
@@ -42,6 +35,14 @@ const wrapperModifiers = {
     direction: rtl;
   `,
   withSvg: () => css`
+    ${ImageBox} {
+      height: 45rem;
+      width: 45rem;
+      position: absolute;
+      bottom: 0%;
+      left: 10%;
+      z-index: 1;
+    }
     svg {
       display: block;
       position: absolute;
@@ -53,6 +54,7 @@ const wrapperModifiers = {
     height: 30rem;
     ${NameProduct} {
       font-size: 3.5rem;
+      margin-bottom: 0;
     }
     ${ImageBox} {
       height: 100%;
@@ -67,6 +69,7 @@ export const Wrapper = styled.main<WrapperProps>`
   ${({ theme, color, invert, withSvg, halfHeight }) => css`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     ${invert && wrapperModifiers.invert()}
     ${color && wrapperModifiers[color](theme)}
     position: relative;
@@ -132,6 +135,15 @@ export const Description = styled.h4`
 export const ImageBox = styled.div`
   width: 60rem;
   height: 60rem;
+  animation: hoverAnimation 2s forwards;
+  @keyframes hoverAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   img {
     height: 100%;
     width: 100%;

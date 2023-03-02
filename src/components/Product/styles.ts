@@ -1,8 +1,13 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  ${media.lessThan('medium')`
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  `}
 `
 
 type ImageProps = {
@@ -13,8 +18,11 @@ export const Image = styled.div<ImageProps>`
     width: 50rem;
     height: 50rem;
     background: url(${src});
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    ${media.lessThan('medium')`
+      width: 40rem;
+  `}
   `}
 `
 

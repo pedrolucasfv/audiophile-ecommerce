@@ -1,9 +1,15 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  ${media.lessThan('medium')`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  `}
   grid-gap: 2rem;
 `
 export const Text = styled.div`
@@ -19,6 +25,9 @@ export const MenuNav = styled.div`
   grid-column: 3/6;
   display: flex;
   align-items: center;
+  ${media.lessThan('medium')`
+  flex-direction: column;
+  `}
 `
 export const SocialNetworks = styled.div`
   grid-column: 5/6;

@@ -43,7 +43,9 @@ const Home = ({
       <S.BlackContent>
         <Container>
           <Menu />
-          <Banner {...mainBanner} />
+          <S.MainBanner>
+            <Banner {...mainBanner} />
+          </S.MainBanner>
         </Container>
       </S.BlackContent>
       <Container>
@@ -53,7 +55,9 @@ const Home = ({
           <CategoryCard {...categoryCardMock[2]} />
         </S.CategoryCard>
         <S.BannerContent>
-          <Banner {...secondBanner} invert withSVG />
+          <S.SecondBanner>
+            <Banner {...secondBanner} invert withSVG />
+          </S.SecondBanner>
           <Banner {...thirdBanner} halfHeight />
           <S.SimpleBanner>
             <S.ImageBox src={simpleBanner.image} />

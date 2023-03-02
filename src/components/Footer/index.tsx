@@ -17,13 +17,14 @@ export type FooterProps = {
 const Footer = ({ text, socialNetworks }: FooterProps) => (
   <S.Wrapper>
     <S.Logo role="img" aria-label="Audiophile" />
-    <S.Text>{text}</S.Text>
+
     <S.MenuNav>
       <S.MenuLink href="/">home</S.MenuLink>
       <S.MenuLink href="/category/headphones">headphones</S.MenuLink>
       <S.MenuLink href="/category/speakers">speakers</S.MenuLink>
       <S.MenuLink href="/category/earphones">earphones</S.MenuLink>
     </S.MenuNav>
+    <S.Text>{text}</S.Text>
     <S.SocialNetworks>
       <S.MenuLink href={socialNetworks.facebook} aria-label="Facebook">
         <Facebook size={20} />

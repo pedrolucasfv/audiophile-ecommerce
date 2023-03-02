@@ -1,7 +1,13 @@
 import { Wrapper as BannerWrapperStyles } from 'components/Banner/styles'
-import styled, { css } from 'styled-components'
+import {
+  Info as BannerInfo,
+  ImageBox as BannerImageBox
+} from 'components/Banner/styles'
 
-export const Wrapper = styled.main``
+import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
+
+export const Wrapper = styled.section``
 
 export const BlackContent = styled.div`
   ${({ theme }) => css`
@@ -12,6 +18,9 @@ export const CategoryCard = styled.div`
   padding: 0 10rem;
   padding-top: 15rem;
   display: flex;
+  ${media.lessThan('medium')`
+    flex-direction: column;
+  `}
   justify-content: space-between;
 `
 
@@ -22,6 +31,40 @@ export const BannerContent = styled.div`
     margin-bottom: 5rem;
   }
 `
+export const MainBanner = styled.div`
+  ${media.lessThan('medium')`
+  ${BannerWrapperStyles} {
+    grid-template-columns: 1fr;
+  }
+  ${BannerInfo} {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2;
+  }
+  ${BannerImageBox} {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+  }
+  `}
+`
+
+export const SecondBanner = styled.div`
+  ${media.lessThan('medium')`
+  ${BannerWrapperStyles} {
+    grid-template-rows: 1fr 1fr;
+  }
+  ${BannerInfo} {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  ${BannerImageBox} {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  `}
+`
+
 export const Content = styled.div`
   padding: 0rem 10rem;
   margin-bottom: 15rem;

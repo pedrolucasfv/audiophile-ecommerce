@@ -18,7 +18,9 @@ export const Image = styled.div<ImageProps>`
     margin-top: 0.6rem;
     height: 50rem;
     width: 100%;
+    ${media.greaterThan('medium')`
     min-width: 54rem;
+   `}
     background-image: url(${src});
     background-size: cover;
   `}

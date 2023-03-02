@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.main``
 
@@ -25,6 +26,10 @@ export const CategoryCard = styled.div`
   padding: 5rem 10rem;
   display: flex;
   justify-content: space-between;
+  ${media.lessThan('medium')`
+      flex-direction: column;
+      padding: 1rem 5rem;
+  `}
 `
 export const ProductInfo = styled.div`
   margin: 10rem 0;
@@ -42,11 +47,17 @@ export const OtherProductContent = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 5rem;
+  ${media.lessThan('medium')`
+     margin-left: 5rem;
+  `}
 `
 export const OtherProduct = styled.div`
   padding: 5rem 0;
   display: flex;
   justify-content: space-around;
+  ${media.lessThan('medium')`
+      flex-direction: column;
+  `}
 `
 
 export const OtherProductTitle = styled.h5`
