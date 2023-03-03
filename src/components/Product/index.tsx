@@ -15,7 +15,7 @@ const Product = ({ description, name, price, title, image }: ProductProps) => {
   const { addToCart } = useCart()
   const addItemToCart = (e: React.MouseEvent) => {
     e.preventDefault()
-    addToCart({ name: name, image: image, price: price })
+    addToCart({ name: name, image: image, price: price, quantity: 1 })
   }
   return (
     <S.Wrapper>

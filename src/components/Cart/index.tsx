@@ -7,13 +7,13 @@ import * as S from './styles'
 const Cart = () => {
   const total = 0
 
-  const { items } = useCart()
+  const { items, totalQuantity, clearCart } = useCart()
 
   return (
     <S.Wrapper>
       <S.Header>
-        <S.Title>CART ({items?.length})</S.Title>
-        <S.RemoveAll>Remove All</S.RemoveAll>
+        <S.Title>CART ({totalQuantity})</S.Title>
+        <S.RemoveAll onClick={() => clearCart()}>Remove All</S.RemoveAll>
       </S.Header>
       {items?.map((value) => (
         <>
@@ -23,7 +23,7 @@ const Cart = () => {
               <S.NameProduct>{value.name}</S.NameProduct>
               <S.Price>R$ {value.price}</S.Price>
             </S.ContentItem>
-            <UnitSelector unit={1} />
+            <UnitSelector unit={value.quantity} />
           </S.Item>
         </>
       ))}

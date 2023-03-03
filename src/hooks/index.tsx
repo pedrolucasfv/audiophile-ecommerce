@@ -7,18 +7,25 @@ export type ItemProps = {
   name: string
   price: number
   image: string
+  quantity: number
 }
 
 export type CartContextData = {
   items: ItemProps[]
+  totalQuantity: number
+  totalPrice: number
   isInCart: (item: ItemProps) => boolean
   addToCart: (item: ItemProps) => void
+  clearCart: () => void
 }
 
 export const CartContextDefaultValues = {
   items: [],
+  totalQuantity: 0,
+  totalPrice: 0,
   isInCart: () => false,
-  addToCart: () => null
+  addToCart: () => null,
+  clearCart: () => null
 }
 
 export const CartContext = createContext<CartContextData>(
@@ -34,7 +41,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
   useEffect(() => {
     const data = getStorageItem(CART_KEY)
 
-    const dataObject = data.map((item: string) => {
+    const dataObject = data?.map((item: string) => {
       const itemAux = item.split(',')
 
       const itemFinal = itemAux.map((item) => {
@@ -45,7 +52,8 @@ const CartProvider = ({ children }: CartProviderProps) => {
       return {
         name: `${itemFinal[0]}`,
         image: `${itemFinal[1]}`,
-        price: `${itemFinal[2]}`
+        price: `${itemFinal[2]}`,
+        quantity: `${parseInt(itemFinal[3])}`
       }
     })
 
@@ -57,23 +65,46 @@ const CartProvider = ({ children }: CartProviderProps) => {
   const isInCart = (item: ItemProps) =>
     item ? cartItems.includes(item) : false
 
-  const addToCart = (item: ItemProps) => {
-    const newItems = [...cartItems, item]
-    setCartItems(newItems)
-    const newItemsString = newItems.map((item) => {
+  const saveCart = (items: ItemProps[]) => {
+    setCartItems(items)
+    const newItemsString = items?.map((item) => {
       return (
-        `name:${item.name},` + `image:${item.image},` + `price:${item.price}`
+        `name:${item.name},` +
+        `image:${item.image},` +
+        `price:${item.price},` +
+        `quantity:${item.quantity}`
       )
     })
     setStorageItem(CART_KEY, newItemsString)
   }
 
+  const addToCart = (item: ItemProps) => {
+    saveCart([...cartItems, item])
+  }
+
+  const clearCart = () => {
+    saveCart([])
+  }
+
+  const totalQuantity =
+    cartItems.reduce((acc, item) => {
+      return acc + item.quantity
+    }, 0) || 0
+
+  const totalPrice =
+    cartItems.reduce((acc, item) => {
+      return acc + item.price
+    }, 0) || 0
+
   return (
     <CartContext.Provider
       value={{
         items: cartItems,
+        totalQuantity: totalQuantity,
+        totalPrice: totalPrice,
         isInCart,
-        addToCart
+        addToCart,
+        clearCart
       }}
     >
       {children}
