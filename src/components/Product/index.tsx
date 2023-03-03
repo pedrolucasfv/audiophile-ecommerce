@@ -1,6 +1,7 @@
 import Button from 'components/Button'
 import UnitSelector from 'components/UnitSelector'
 import { useCart } from 'hooks'
+import { useState } from 'react'
 import * as S from './styles'
 
 export type ProductProps = {
@@ -12,11 +13,18 @@ export type ProductProps = {
 }
 
 const Product = ({ description, name, price, title, image }: ProductProps) => {
-  const { addToCart } = useCart()
+  const { addToCart, isInCart } = useCart()
+  const [quantity, setQuantity] = useState(1)
+
+  const handleQuantity = (unit: number) => {
+    setQuantity(unit)
+  }
   const addItemToCart = (e: React.MouseEvent) => {
     e.preventDefault()
-    addToCart({ name: name, image: image, price: price, quantity: 1 })
+    if (!isInCart(name))
+      addToCart({ name: name, image: image, price: price, quantity: quantity })
   }
+
   return (
     <S.Wrapper>
       <S.Image src={image} />
@@ -27,7 +35,7 @@ const Product = ({ description, name, price, title, image }: ProductProps) => {
         <S.Price aria-label="price">$ {price}</S.Price>
         <S.Buttons>
           <S.UnitSelector>
-            <UnitSelector />
+            <UnitSelector func={handleQuantity} />
           </S.UnitSelector>
           <S.Button onClick={(e) => addItemToCart(e)}>
             <Button text="ADD TO CART" />

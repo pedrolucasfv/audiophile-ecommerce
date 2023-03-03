@@ -6,6 +6,7 @@ export const Wrapper = styled.main`
     align-items: center;
     justify-content: space-between;
     background-color: ${theme.colors.gray};
+    color: ${theme.colors.black};
   `}
 `
 

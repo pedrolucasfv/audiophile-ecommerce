@@ -14,8 +14,9 @@ export type CartContextData = {
   items: ItemProps[]
   totalQuantity: number
   totalPrice: number
-  isInCart: (item: ItemProps) => boolean
+  isInCart: (itemName: string) => boolean
   addToCart: (item: ItemProps) => void
+  removeFromCart: (item: ItemProps) => void
   clearCart: () => void
 }
 
@@ -25,6 +26,7 @@ export const CartContextDefaultValues = {
   totalPrice: 0,
   isInCart: () => false,
   addToCart: () => null,
+  removeFromCart: () => null,
   clearCart: () => null
 }
 
@@ -50,10 +52,10 @@ const CartProvider = ({ children }: CartProviderProps) => {
       })
 
       return {
-        name: `${itemFinal[0]}`,
-        image: `${itemFinal[1]}`,
-        price: `${itemFinal[2]}`,
-        quantity: `${parseInt(itemFinal[3])}`
+        name: itemFinal[0],
+        image: itemFinal[1],
+        price: parseInt(itemFinal[2]),
+        quantity: parseInt(itemFinal[3])
       }
     })
 
@@ -62,8 +64,12 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
   }, [])
 
-  const isInCart = (item: ItemProps) =>
-    item ? cartItems.includes(item) : false
+  const isInCart = (itemName: string) => {
+    const cartItemsName = cartItems.map((itemMap) => {
+      return itemMap.name
+    })
+    return cartItemsName.includes(itemName)
+  }
 
   const saveCart = (items: ItemProps[]) => {
     setCartItems(items)
@@ -82,6 +88,11 @@ const CartProvider = ({ children }: CartProviderProps) => {
     saveCart([...cartItems, item])
   }
 
+  const removeFromCart = (item: ItemProps) => {
+    const newCartItems = cartItems.filter((itemMap) => itemMap !== item)
+    saveCart(newCartItems)
+  }
+
   const clearCart = () => {
     saveCart([])
   }
@@ -93,7 +104,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
 
   const totalPrice =
     cartItems.reduce((acc, item) => {
-      return acc + item.price
+      return acc + item.price * item.quantity
     }, 0) || 0
 
   return (
@@ -104,6 +115,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
         totalPrice: totalPrice,
         isInCart,
         addToCart,
+        removeFromCart,
         clearCart
       }}
     >

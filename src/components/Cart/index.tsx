@@ -5,9 +5,7 @@ import { useCart } from 'hooks'
 import * as S from './styles'
 
 const Cart = () => {
-  const total = 0
-
-  const { items, totalQuantity, clearCart } = useCart()
+  const { items, totalQuantity, clearCart, totalPrice } = useCart()
 
   return (
     <S.Wrapper>
@@ -29,7 +27,7 @@ const Cart = () => {
       ))}
       <S.TotalContent>
         <S.Total>TOTAL</S.Total>
-        <S.PriceTotal>R${total}</S.PriceTotal>
+        <S.PriceTotal>R${totalPrice}</S.PriceTotal>
       </S.TotalContent>
       <Button text="CHECKOUT" />
     </S.Wrapper>

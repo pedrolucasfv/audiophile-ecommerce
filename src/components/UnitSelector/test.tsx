@@ -4,11 +4,11 @@ import UnitSelector from '.'
 import { renderWithTheme } from '../../../utils/tests/helpers'
 
 describe('<UnitSelector />', () => {
-  it('should render correctly and with 0 units by default', () => {
+  it('should render correctly and with 1 units by default', () => {
     renderWithTheme(<UnitSelector />)
     expect(screen.getByLabelText('Plus')).toBeInTheDocument()
     expect(screen.getByLabelText('Sub')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /0/ })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /1/ })).toBeInTheDocument()
   })
   it('should handle the unit when click on sub or plus and start with a initial value', () => {
     renderWithTheme(<UnitSelector unit={5} />)
