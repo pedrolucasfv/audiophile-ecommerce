@@ -39,13 +39,14 @@ export const MenuLink = styled.a`
 
 export const Cart = styled.div`
   position: absolute;
-  right: 0%;
+  right: 40%;
   z-index: 50;
 `
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
     position: relative;
     color: white;
+    display: flex;
     svg {
       margin-right: 1rem;
       cursor: pointer;
@@ -100,4 +101,8 @@ export const MenuToggle = styled.nav<MenuToggleProps>`
       transition: transform 0.3s ease-in-out;
     }
   `}
+`
+
+export const CartIcon = styled.div`
+  cursor: pointer;
 `

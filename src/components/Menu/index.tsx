@@ -1,13 +1,13 @@
 import MediaMatch from 'components/MediaMatch'
 import * as S from './styles'
 
-import { Cart as IconCart } from '@styled-icons/bootstrap/Cart'
 import { PersonFill } from '@styled-icons/bootstrap/PersonFill'
 import { MenuButtonWide } from '@styled-icons/bootstrap/MenuButtonWide'
 import { ArrowDownSquare } from '@styled-icons/bootstrap/ArrowDownSquare'
 
 import { useState } from 'react'
 import Cart from 'components/Cart'
+import CartIcon from 'components/CartIcon'
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,11 +31,9 @@ const Menu = () => {
 
       <S.MenuGroup>
         <PersonFill size={20} />
-        <IconCart
-          size={20}
-          aria-label="Cart"
-          onClick={() => setIsCartOpen(!isCartOpen)}
-        />
+        <S.CartIcon onClick={() => setIsCartOpen(!isCartOpen)}>
+          <CartIcon />
+        </S.CartIcon>
         <S.Cart>{isCartOpen && <Cart />}</S.Cart>
       </S.MenuGroup>
 
