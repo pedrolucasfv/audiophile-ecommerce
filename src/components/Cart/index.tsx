@@ -1,28 +1,13 @@
 import Button from 'components/Button'
 import UnitSelector from 'components/UnitSelector'
+import { useCart } from 'hooks'
 
 import * as S from './styles'
 
-type ItemProps = {
-  image: string
-  nameProduct: string
-  unit: number
-  price: number
-}
-export type CartProps = {
-  items?: ItemProps[]
-}
+const Cart = () => {
+  const total = 0
 
-const Cart = ({ items }: CartProps) => {
-  let total = 0
-
-  function sumPrice() {
-    items?.map((value) => {
-      const totalProduct = value.price * value.unit
-      total = total + totalProduct
-    })
-  }
-  sumPrice()
+  const { items } = useCart()
 
   return (
     <S.Wrapper>
@@ -35,10 +20,10 @@ const Cart = ({ items }: CartProps) => {
           <S.Item>
             <S.Image src={value.image} />
             <S.ContentItem>
-              <S.NameProduct>{value.nameProduct}</S.NameProduct>
+              <S.NameProduct>{value.name}</S.NameProduct>
               <S.Price>R$ {value.price}</S.Price>
             </S.ContentItem>
-            <UnitSelector unit={value.unit} />
+            <UnitSelector unit={1} />
           </S.Item>
         </>
       ))}

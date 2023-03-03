@@ -3,10 +3,16 @@ import { getStorageItem, setStorageItem } from '../../utils/localStorage/index'
 
 const CART_KEY = 'AUDIOPHILE'
 
+export type ItemProps = {
+  name: string
+  price: number
+  image: string
+}
+
 export type CartContextData = {
-  items: string[]
-  isInCart: (id: string) => boolean
-  addToCart: (id: string) => void
+  items: ItemProps[]
+  isInCart: (item: ItemProps) => boolean
+  addToCart: (item: ItemProps) => void
 }
 
 export const CartContextDefaultValues = {
@@ -23,22 +29,43 @@ export type CartProviderProps = {
 }
 
 const CartProvider = ({ children }: CartProviderProps) => {
-  const [cartItems, setCartItems] = useState<string[]>([])
+  const [cartItems, setCartItems] = useState<ItemProps[]>([])
 
   useEffect(() => {
     const data = getStorageItem(CART_KEY)
 
-    if (data) {
-      setCartItems(data)
+    const dataObject = data.map((item: string) => {
+      const itemAux = item.split(',')
+
+      const itemFinal = itemAux.map((item) => {
+        const aux = item.split(':')
+        return aux[1]
+      })
+
+      return {
+        name: `${itemFinal[0]}`,
+        image: `${itemFinal[1]}`,
+        price: `${itemFinal[2]}`
+      }
+    })
+
+    if (dataObject) {
+      setCartItems(dataObject)
     }
   }, [])
 
-  const isInCart = (id: string) => (id ? cartItems.includes(id) : false)
+  const isInCart = (item: ItemProps) =>
+    item ? cartItems.includes(item) : false
 
-  const addToCart = (id: string) => {
-    const newItems = [...cartItems, id]
+  const addToCart = (item: ItemProps) => {
+    const newItems = [...cartItems, item]
     setCartItems(newItems)
-    setStorageItem(CART_KEY, cartItems)
+    const newItemsString = newItems.map((item) => {
+      return (
+        `name:${item.name},` + `image:${item.image},` + `price:${item.price}`
+      )
+    })
+    setStorageItem(CART_KEY, newItemsString)
   }
 
   return (

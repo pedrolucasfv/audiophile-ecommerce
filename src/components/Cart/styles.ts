@@ -64,6 +64,7 @@ export const NameProduct = styled.h4`
     font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.bold};
     padding-right: 7rem;
+    color: ${theme.colors.black};
   `}
 `
 
