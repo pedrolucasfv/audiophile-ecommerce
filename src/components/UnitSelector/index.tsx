@@ -5,18 +5,19 @@ import { DashLg as Sub } from '@styled-icons/bootstrap/DashLg'
 
 export type UnitSelectorProps = {
   unit?: number
-  func?: (unit: number) => void
+  name?: string
+  func?: (unit: number, name: string) => void
 }
-const UnitSelector = ({ unit = 1, func }: UnitSelectorProps) => {
+const UnitSelector = ({ unit = 1, func, name = '' }: UnitSelectorProps) => {
   const [unitState, setUnitState] = useState(unit)
 
   const handleUnit = (control: string) => {
     if (control == 'plus') {
-      if (func) func(unitState + 1)
+      if (func) func(unitState + 1, name)
       setUnitState(unitState + 1)
     } else if (control == 'sub')
       if (unitState > 0) {
-        if (func) func(unitState - 1)
+        if (func) func(unitState - 1, name)
         setUnitState(unitState - 1)
       }
   }

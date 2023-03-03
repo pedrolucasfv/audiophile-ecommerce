@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
-  width: 45rem;
+  width: 50rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -57,13 +57,15 @@ export const Item = styled.div`
   margin-bottom: 2rem;
 `
 
-export const ContentItem = styled.div``
+export const ContentItem = styled.div`
+  flex-grow: 1;
+  padding-left: 1.3rem;
+`
 
 export const NameProduct = styled.h4`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.large};
+    font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.bold};
-    padding-right: 7rem;
     color: ${theme.colors.black};
   `}
 `

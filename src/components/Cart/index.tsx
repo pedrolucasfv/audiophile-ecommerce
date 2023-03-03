@@ -1,7 +1,6 @@
 import Button from 'components/Button'
 import UnitSelector from 'components/UnitSelector'
 import { useCart } from 'hooks'
-import { useState } from 'react'
 
 import * as S from './styles'
 
@@ -14,11 +13,10 @@ const Cart = () => {
     updateItemQuantity,
     removeFromCart
   } = useCart()
-  const [itemSelected, setItemSelected] = useState('')
 
-  const handleUnitItem = (unit: number) => {
-    if (unit == 0) removeFromCart(itemSelected)
-    else updateItemQuantity(itemSelected, unit)
+  const handleUnitItem = (unit: number, itemName: string) => {
+    if (unit == 0) removeFromCart(itemName)
+    else updateItemQuantity(itemName, unit)
   }
 
   return (
@@ -29,13 +27,17 @@ const Cart = () => {
       </S.Header>
       {items?.map((value) => (
         <>
-          <S.Item onClick={() => setItemSelected(value.name)}>
+          <S.Item>
             <S.Image src={value.image} />
             <S.ContentItem>
               <S.NameProduct>{value.name}</S.NameProduct>
               <S.Price>R$ {value.price}</S.Price>
             </S.ContentItem>
-            <UnitSelector unit={value.quantity} func={handleUnitItem} />
+            <UnitSelector
+              unit={value.quantity}
+              func={handleUnitItem}
+              name={value.name}
+            />
           </S.Item>
         </>
       ))}
