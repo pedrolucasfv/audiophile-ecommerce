@@ -6,12 +6,19 @@ import { useState } from 'react'
 import * as S from './styles'
 
 const Cart = () => {
-  const { items, totalQuantity, clearCart, totalPrice, updateItemQuantity } =
-    useCart()
+  const {
+    items,
+    totalQuantity,
+    clearCart,
+    totalPrice,
+    updateItemQuantity,
+    removeFromCart
+  } = useCart()
   const [itemSelected, setItemSelected] = useState('')
 
   const handleUnitItem = (unit: number) => {
-    updateItemQuantity(itemSelected, unit)
+    if (unit == 0) removeFromCart(itemSelected)
+    else updateItemQuantity(itemSelected, unit)
   }
 
   return (
