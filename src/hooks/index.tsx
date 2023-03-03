@@ -17,6 +17,7 @@ export type CartContextData = {
   isInCart: (itemName: string) => boolean
   addToCart: (item: ItemProps) => void
   removeFromCart: (item: ItemProps) => void
+  updateItemQuantity: (itemName: string, quantity: number) => void
   clearCart: () => void
 }
 
@@ -27,6 +28,7 @@ export const CartContextDefaultValues = {
   isInCart: () => false,
   addToCart: () => null,
   removeFromCart: () => null,
+  updateItemQuantity: () => null,
   clearCart: () => null
 }
 
@@ -93,6 +95,16 @@ const CartProvider = ({ children }: CartProviderProps) => {
     saveCart(newCartItems)
   }
 
+  const updateItemQuantity = (itemName: string, quantity: number) => {
+    const newCartItems = cartItems.map((itemMap) => {
+      if (itemMap.name == itemName) {
+        itemMap.quantity = quantity
+      }
+      return itemMap
+    })
+    saveCart(newCartItems)
+  }
+
   const clearCart = () => {
     saveCart([])
   }
@@ -116,6 +128,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
         isInCart,
         addToCart,
         removeFromCart,
+        updateItemQuantity,
         clearCart
       }}
     >
