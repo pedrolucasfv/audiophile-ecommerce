@@ -43,11 +43,10 @@ const Menu = () => {
           onClick={() => setIsOpen(false)}
         />
         <S.MenuNav>
-          <S.MenuLink href="#">Colletions</S.MenuLink>
-          <S.MenuLink href="#">Men</S.MenuLink>
-          <S.MenuLink href="#">Women</S.MenuLink>
-          <S.MenuLink href="#">About</S.MenuLink>
-          <S.MenuLink href="#">Contact</S.MenuLink>
+          <S.MenuLink href="/">home</S.MenuLink>
+          <S.MenuLink href="/category/headphones">headphones</S.MenuLink>
+          <S.MenuLink href="/category/speakers">speakers</S.MenuLink>
+          <S.MenuLink href="/category/earphones">earphones</S.MenuLink>
         </S.MenuNav>
       </S.MenuToggle>
     </S.Wrapper>

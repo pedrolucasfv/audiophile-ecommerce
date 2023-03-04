@@ -58,7 +58,9 @@ const Home = ({
           <S.SecondBanner>
             <Banner {...secondBanner} invert withSVG />
           </S.SecondBanner>
-          <Banner {...thirdBanner} halfHeight />
+          <S.ThirdBanner>
+            <Banner {...thirdBanner} halfHeight />
+          </S.ThirdBanner>
           <S.SimpleBanner>
             <S.ImageBox src={simpleBanner.image} />
             <Banner

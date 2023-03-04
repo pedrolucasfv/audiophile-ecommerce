@@ -40,6 +40,9 @@ export const ContentInfo = styled.div`
 
 export const Gallery = styled.div`
   margin: 10rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const OtherProductContent = styled.div`
@@ -48,7 +51,7 @@ export const OtherProductContent = styled.div`
   align-items: center;
   margin-bottom: 5rem;
   ${media.lessThan('medium')`
-     margin-left: 5rem;
+     margin-left: 0rem;
   `}
 `
 export const OtherProduct = styled.div`
@@ -68,5 +71,6 @@ export const OtherProductTitle = styled.h5`
     letter-spacing: 0.1rem;
     color: ${theme.colors.black};
     margin-bottom: 2rem;
+    text-align: center;
   `}
 `

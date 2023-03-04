@@ -9,6 +9,7 @@ export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 3rem;
+  width: 113rem;
   ${media.lessThan('medium')`
   grid-template-columns: 1fr;
   grid-gap: 0;

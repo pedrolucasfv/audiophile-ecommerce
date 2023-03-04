@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components'
+import media from 'styled-media-query'
 
 type ColorProps = {
   color: 'primary' | 'white' | 'black' | 'none'
@@ -32,7 +33,9 @@ const wrapperModifiers = {
     background-color: none;
   `,
   invert: () => css`
-    direction: rtl;
+    ${media.greaterThan('medium')`
+  direction: rtl;
+  `}
   `,
   withSvg: () => css`
     ${ImageBox} {
@@ -41,6 +44,9 @@ const wrapperModifiers = {
       position: absolute;
       bottom: 0%;
       left: 10%;
+      z-index: 1;
+    }
+    ${Info} {
       z-index: 1;
     }
     svg {
@@ -79,13 +85,18 @@ export const Wrapper = styled.main<WrapperProps>`
     }
     ${withSvg && wrapperModifiers.withSvg}
     overflow: hidden;
+    ${media.lessThan('medium')`
+    width: 40rem;
+  `}
   `}
 `
 export const Info = styled.div`
   ${({ theme }) => css`
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    ${media.lessThan('medium')`
+    align-items: center;
+   `}
     flex-direction: column;
     padding: ${theme.spacings.large};
     a {
@@ -121,6 +132,10 @@ export const NameProduct = styled.h2`
   ${({ theme }) => css`
     font-size: 5.5rem;
     margin: ${theme.spacings.xsmall} 0;
+    ${media.lessThan('medium')`
+    font-size: 4rem;
+    text-align: center;
+    `}
   `}
 `
 export const Description = styled.h4`
@@ -129,12 +144,19 @@ export const Description = styled.h4`
     font-weight: ${theme.font.normal};
     margin-bottom: ${theme.spacings.large};
     color: ${theme.colors.darkGray};
+    ${media.lessThan('medium')`
+    text-align: center;
+    `}
   `}
 `
 
 export const ImageBox = styled.div`
   width: 60rem;
   height: 60rem;
+  ${media.lessThan('medium')`
+    width: 40rem;
+   height: 40rem;
+  `}
   animation: hoverAnimation 2s forwards;
   @keyframes hoverAnimation {
     from {
@@ -143,10 +165,5 @@ export const ImageBox = styled.div`
     to {
       opacity: 1;
     }
-  }
-  img {
-    height: 100%;
-    width: 100%;
-    //object-fit: cover;
   }
 `

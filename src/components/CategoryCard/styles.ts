@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 import theme from 'styles/theme'
 
 export const Wrapper = styled.main`
@@ -10,6 +11,9 @@ export const Wrapper = styled.main`
   height: 20rem;
   width: 34rem;
   border-radius: 1rem;
+  ${media.lessThan('medium')`
+    margin-bottom: 4rem    
+  `}
 `
 
 type ImageProps = {

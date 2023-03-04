@@ -15,17 +15,20 @@ export const BlackContent = styled.div`
   `}
 `
 export const CategoryCard = styled.div`
-  padding: 0 10rem;
-  padding-top: 15rem;
+  padding: 15rem 10rem 0rem 10rem;
   display: flex;
   ${media.lessThan('medium')`
     flex-direction: column;
+  padding: 15rem 0rem 0rem 2rem;
   `}
   justify-content: space-between;
 `
 
 export const BannerContent = styled.div`
   padding: 10rem 10rem;
+  ${media.lessThan('medium')`
+  padding: 10rem 0;
+  `}
   padding-top: 20rem;
   ${BannerWrapperStyles} {
     margin-bottom: 5rem;
@@ -52,17 +55,23 @@ export const MainBanner = styled.div`
 export const SecondBanner = styled.div`
   ${media.lessThan('medium')`
   ${BannerWrapperStyles} {
-    grid-template-rows: 1fr 1fr;
-  }
-  ${BannerInfo} {
-    grid-column: 1;
-    grid-row: 2;
+    width: 38rem;
   }
   ${BannerImageBox} {
-    grid-column: 1;
-    grid-row: 1;
+    display: none;
   }
   `}
+`
+export const ThirdBanner = styled.div`
+  ${media.lessThan('medium')`
+  ${BannerWrapperStyles} {
+    width: 38rem;
+    grid-template-columns: 1fr;
+  }
+  ${BannerImageBox} {
+    display: none;
+  }
+`}
 `
 
 export const Content = styled.div`
@@ -73,6 +82,14 @@ export const Content = styled.div`
 export const SimpleBanner = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  ${media.lessThan('medium')`
+    grid-template-columns: 1fr;
+     grid-template-rows: 1fr 2fr;
+     grid-row-gap: 2rem;
+  ${BannerWrapperStyles} {
+    width: 38rem;
+  }
+  `}
 `
 
 type ImageProps = {
@@ -83,6 +100,10 @@ export const ImageBox = styled.div<ImageProps>`
   ${({ src }) => css`
     width: 50rem;
     height: 40rem;
+    ${media.lessThan('medium')`
+    width: 38rem;
+    height: 23rem;
+  `}
     background: url(${src});
     background-size: contain;
     background-repeat: no-repeat;

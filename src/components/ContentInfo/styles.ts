@@ -16,9 +16,11 @@ type ImageProps = {
 export const Image = styled.div<ImageProps>`
   ${({ src }) => css`
     margin-top: 0.6rem;
+    height: 35rem;
+    width: 35rem;
+    ${media.greaterThan('medium')`
     height: 50rem;
     width: 100%;
-    ${media.greaterThan('medium')`
     min-width: 54rem;
    `}
     background-image: url(${src});
@@ -29,7 +31,7 @@ export const Image = styled.div<ImageProps>`
 export const Info = styled.div`
   padding-top: 3rem;
   ${media.greaterThan('medium')`
-  padding: 5rem;
+    padding: 5rem;
   `}
 `
 
@@ -57,9 +59,6 @@ export const Text = styled.text`
     font-size: ${theme.font.sizes.medium};
     font-weight: ${theme.font.normal};
     color: ${theme.colors.darkGray};
-    ${media.lessThan('medium')`
-    text-align: center;
-  `}
     span {
       color: ${theme.colors.accent};
     }
