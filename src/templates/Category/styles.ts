@@ -53,7 +53,7 @@ export const CategoryCard = styled.div`
   justify-content: space-between;
   ${media.lessThan('medium')`
     flex-direction: column;
-    padding: 20rem 2rem;
+    padding: 20rem 0rem;
   `}
 `
 export const Content = styled.div`

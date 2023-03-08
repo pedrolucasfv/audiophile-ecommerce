@@ -56,6 +56,9 @@ export const SecondBanner = styled.div`
   ${media.lessThan('medium')`
   ${BannerWrapperStyles} {
     width: 38rem;
+    ${media.lessThan('medium')`
+    width: 35rem;
+  `}
   }
   ${BannerImageBox} {
     display: none;
@@ -67,6 +70,9 @@ export const ThirdBanner = styled.div`
   ${BannerWrapperStyles} {
     width: 38rem;
     grid-template-columns: 1fr;
+    ${media.lessThan('medium')`
+    width: 35rem;
+  `}
   }
   ${BannerImageBox} {
     display: none;
@@ -87,7 +93,7 @@ export const SimpleBanner = styled.div`
      grid-template-rows: 1fr 2fr;
      grid-row-gap: 2rem;
   ${BannerWrapperStyles} {
-    width: 38rem;
+    width: 35rem;
   }
   `}
 `
@@ -101,7 +107,7 @@ export const ImageBox = styled.div<ImageProps>`
     width: 50rem;
     height: 40rem;
     ${media.lessThan('medium')`
-    width: 38rem;
+    width: 35rem;
     height: 23rem;
   `}
     background: url(${src});

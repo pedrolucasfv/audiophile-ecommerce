@@ -86,7 +86,9 @@ export const Wrapper = styled.main<WrapperProps>`
     ${withSvg && wrapperModifiers.withSvg}
     overflow: hidden;
     ${media.lessThan('medium')`
-    width: 40rem;
+    width: 35rem;
+    grid-template-columns: 1fr;
+
   `}
   `}
 `
@@ -154,8 +156,8 @@ export const ImageBox = styled.div`
   width: 60rem;
   height: 60rem;
   ${media.lessThan('medium')`
-    width: 40rem;
-   height: 40rem;
+    width: 35rem;
+   height: 35rem;
   `}
   animation: hoverAnimation 2s forwards;
   @keyframes hoverAnimation {
