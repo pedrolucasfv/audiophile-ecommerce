@@ -1,11 +1,19 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
-  width: 50rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
   background-color: white;
+  animation: cartAnime 1s both;
+  @keyframes cartAnime {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
 
 export const Header = styled.div`

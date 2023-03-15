@@ -6,7 +6,7 @@ export default [
       name: 'XX99 MARK II HEADPHONES',
       description:
         'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
-      price: 2999,
+      price: 300,
       image: '/img/image-product.jpg'
     },
     productInfo: {
@@ -67,7 +67,7 @@ export default [
       name: 'XX59 HEADPHONES',
       description:
         'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
-      price: 899,
+      price: 900,
       image: '/img/product-xx59-headphones/desktop/image-product.jpg'
     },
     productInfo: {
@@ -121,7 +121,7 @@ export default [
       name: 'XX99 MARK I HEADPHONES',
       description:
         'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.',
-      price: 1750,
+      price: 175,
       image: '/img/product-xx99-mark-one-headphones/desktop/image-product.jpg'
     },
     productInfo: {
@@ -178,7 +178,7 @@ export default [
       name: 'ZX9 SPEAKER',
       description:
         'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.',
-      price: 4500,
+      price: 450,
       image: '/img/product-zx9-speaker/desktop/image-product.jpg'
     },
     productInfo: {
@@ -236,7 +236,7 @@ export default [
       name: 'ZX7 SPEAKER',
       description:
         'Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.',
-      price: 3500,
+      price: 350,
       image: '/img/product-zx7-speaker/desktop/image-product.jpg'
     },
     productInfo: {
@@ -294,7 +294,7 @@ export default [
       name: 'YX1 WIRELESS EARPHONES',
       description:
         'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.',
-      price: 599,
+      price: 600,
       image: '/img/product-yx1-earphones/desktop/image-product.jpg'
     },
     productInfo: {

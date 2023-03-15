@@ -10,11 +10,11 @@ import Cart from 'components/Cart'
 import CartIcon from 'components/CartIcon'
 
 const Menu = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
   return (
     <S.Wrapper>
-      <MediaMatch lessThan="medium" onClick={() => setIsOpen(true)}>
+      <MediaMatch lessThan="medium" onClick={() => setIsMenuOpen(true)}>
         <MenuButtonWide size={18} color="white" aria-label="open menu" />
       </MediaMatch>
 
@@ -31,16 +31,18 @@ const Menu = () => {
 
       <S.MenuGroup>
         <PersonFill size={20} />
-        <S.CartIcon onClick={() => setIsCartOpen(!isCartOpen)}>
+        <S.CartIcon onClick={() => setIsCartOpen(true)}>
           <CartIcon />
         </S.CartIcon>
-        <S.Cart>{isCartOpen && <Cart />}</S.Cart>
+        <S.Cart isCartOpen={isCartOpen} aria-hidden={!isCartOpen}>
+          <Cart />
+        </S.Cart>
       </S.MenuGroup>
 
-      <S.MenuToggle aria-hidden={!isOpen} isOpenMenu={isOpen}>
+      <S.MenuToggle aria-hidden={!isMenuOpen} isOpenMenu={isMenuOpen}>
         <ArrowDownSquare
           aria-label="Close Menu"
-          onClick={() => setIsOpen(false)}
+          onClick={() => setIsMenuOpen(false)}
         />
         <S.MenuNav>
           <S.MenuLink href="/">home</S.MenuLink>
@@ -49,6 +51,7 @@ const Menu = () => {
           <S.MenuLink href="/category/earphones">earphones</S.MenuLink>
         </S.MenuNav>
       </S.MenuToggle>
+      {isCartOpen && <S.Sombra onClick={() => setIsCartOpen(false)} />}
     </S.Wrapper>
   )
 }

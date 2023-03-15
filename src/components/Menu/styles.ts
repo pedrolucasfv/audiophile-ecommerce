@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.main`
   ${({ theme }) => css`
@@ -36,11 +37,25 @@ export const MenuLink = styled.a`
     }
   `}
 `
+type CartProps = {
+  isCartOpen: boolean
+}
 
-export const Cart = styled.div`
-  position: absolute;
-  right: 40%;
-  z-index: 50;
+export const Cart = styled.div<CartProps>`
+  ${({ isCartOpen }) => css`
+    position: absolute;
+    right: 0%;
+    z-index: 50;
+    width: 38rem;
+    ${media.greaterThan('medium')`
+    width: 50rem;
+   right: 60%;
+  `}
+    transition: transform 0.5s, opacity 0.7s ease-in-out;
+    opacity: ${isCartOpen ? 1 : 0};
+    transform: ${isCartOpen ? 'translateX(0)' : 'translateX(3rem)'};
+    pointer-events: ${isCartOpen ? 'all' : 'none'};
+  `}
 `
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
@@ -105,4 +120,14 @@ export const MenuToggle = styled.nav<MenuToggleProps>`
 
 export const CartIcon = styled.div`
   cursor: pointer;
+`
+
+export const Sombra = styled.div`
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 40;
 `
