@@ -6,6 +6,7 @@ import Auth0Provider from 'next-auth/providers/auth0'
 
 export const authOptions = {
   // Configure one or more authentication providers
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     Auth0Provider({
       clientId: process.env.AUTH0_CLIENT_ID ? process.env.AUTH0_CLIENT_ID : '',
