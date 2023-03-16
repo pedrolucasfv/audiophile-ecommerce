@@ -14,6 +14,7 @@ export const Wrapper = styled.main`
       opacity: 1;
     }
   }
+  border-radius: 0.5rem;
 `
 
 export const Header = styled.div`

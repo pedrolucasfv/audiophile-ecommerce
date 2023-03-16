@@ -6,6 +6,7 @@ export const Wrapper = styled.main`
     display: flex;
     flex-direction: column;
     padding: ${theme.spacings.xsmall};
+    border-radius: 0.5rem;
   `}
 `
 
@@ -22,5 +23,17 @@ export const Text = styled.h2`
 `
 
 export const Button = styled.div`
-  align-self: center;
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    font-weight: ${theme.font.bold};
+    font-size: ${theme.font.sizes.medium};
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: ${theme.spacings.xsmall} ${theme.spacings.medium};
+    background-color: ${theme.colors.accent};
+    :hover {
+      background-color: ${theme.colors.accentLight};
+    }
+  `}
 `
