@@ -8,10 +8,13 @@ import { ArrowDownSquare } from '@styled-icons/bootstrap/ArrowDownSquare'
 import { useState } from 'react'
 import Cart from 'components/Cart'
 import CartIcon from 'components/CartIcon'
+import SignIn from 'components/SignIn'
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isAccountOpen, setIsAccountOpen] = useState(false)
+
   return (
     <S.Wrapper>
       <MediaMatch lessThan="medium" onClick={() => setIsMenuOpen(true)}>
@@ -30,7 +33,10 @@ const Menu = () => {
       </MediaMatch>
 
       <S.MenuGroup>
-        <PersonFill size={20} />
+        <PersonFill size={20} onClick={() => setIsAccountOpen(true)} />
+        <S.Account isAccountOpen={isAccountOpen} aria-hidden={!isAccountOpen}>
+          <SignIn />
+        </S.Account>
         <S.CartIcon onClick={() => setIsCartOpen(true)}>
           <CartIcon />
         </S.CartIcon>
@@ -52,6 +58,7 @@ const Menu = () => {
         </S.MenuNav>
       </S.MenuToggle>
       {isCartOpen && <S.Sombra onClick={() => setIsCartOpen(false)} />}
+      {isAccountOpen && <S.Sombra onClick={() => setIsAccountOpen(false)} />}
     </S.Wrapper>
   )
 }

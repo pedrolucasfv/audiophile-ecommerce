@@ -57,6 +57,7 @@ export const Cart = styled.div<CartProps>`
     pointer-events: ${isCartOpen ? 'all' : 'none'};
   `}
 `
+
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
     position: relative;
@@ -130,4 +131,23 @@ export const Sombra = styled.div`
   left: 0;
   top: 0;
   z-index: 40;
+`
+type AccountProps = {
+  isAccountOpen: boolean
+}
+
+export const Account = styled.div<AccountProps>`
+  ${({ isAccountOpen }) => css`
+    position: absolute;
+    right: 0%;
+    z-index: 50;
+    width: 38rem;
+    ${media.greaterThan('medium')`
+      right: 100%;
+  `}
+    transition: transform 0.5s, opacity 0.7s ease-in-out;
+    opacity: ${isAccountOpen ? 1 : 0};
+    transform: ${isAccountOpen ? 'translateX(0)' : 'translateX(3rem)'};
+    pointer-events: ${isAccountOpen ? 'all' : 'none'};
+  `}
 `
