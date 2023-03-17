@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.main``
 
@@ -13,6 +14,9 @@ export const Text = styled.h2`
     margin: ${theme.spacings.xsmall} 0;
     font-weight: ${theme.font.bold};
     margin-left: 5rem;
+    ${media.lessThan('medium')`
+    font-size: 3rem;
+    `}
   `}
 `
 export const Info = styled.div`
@@ -20,6 +24,12 @@ export const Info = styled.div`
   margin-top: 10rem;
   justify-content: center;
   align-items: center;
+  ${media.lessThan('medium')`
+  svg {
+    height: 15rem;
+    width: 15rem;
+  }
+    `}
 `
 
 export const Button = styled.a`
