@@ -1,6 +1,6 @@
-import Button from 'components/Button'
 import UnitSelector from 'components/UnitSelector'
 import { useCart } from 'hooks'
+import { checkout } from './../../pages/api/stripe/checkout'
 
 import * as S from './styles'
 
@@ -17,6 +17,18 @@ const Cart = () => {
   const handleUnitItem = (unit: number, itemName: string) => {
     if (unit == 0) removeFromCart(itemName)
     else updateItemQuantity(itemName, unit)
+  }
+
+  const handleCheckout = () => {
+    const lineitems = items.map((item) => {
+      const lineItem = {
+        price: item.productID,
+        quantity: item.quantity
+      }
+      return lineItem
+    })
+    console.log(lineitems)
+    checkout(lineitems)
   }
 
   return (
@@ -45,7 +57,7 @@ const Cart = () => {
         <S.Total>TOTAL</S.Total>
         <S.PriceTotal>R${totalPrice}</S.PriceTotal>
       </S.TotalContent>
-      <Button text="CHECKOUT" />
+      <S.Button onClick={() => handleCheckout()}>CHECKOUT</S.Button>
     </S.Wrapper>
   )
 }

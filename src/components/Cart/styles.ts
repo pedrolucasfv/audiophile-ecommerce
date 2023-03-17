@@ -104,3 +104,19 @@ export const Total = styled.h4`
     color: ${theme.colors.darkGray};
   `}
 `
+
+export const Button = styled.div`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    font-weight: ${theme.font.bold};
+    font-size: ${theme.font.sizes.medium};
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: ${theme.spacings.xsmall} ${theme.spacings.medium};
+    background-color: ${theme.colors.accent};
+    :hover {
+      background-color: ${theme.colors.accentLight};
+    }
+  `}
+`

@@ -10,9 +10,17 @@ export type ProductProps = {
   description: string
   price: number
   image: string
+  productID: string
 }
 
-const Product = ({ description, name, price, title, image }: ProductProps) => {
+const Product = ({
+  description,
+  name,
+  price,
+  title,
+  image,
+  productID
+}: ProductProps) => {
   const { addToCart, isInCart } = useCart()
   const [quantity, setQuantity] = useState(1)
 
@@ -22,7 +30,13 @@ const Product = ({ description, name, price, title, image }: ProductProps) => {
   const addItemToCart = (e: React.MouseEvent) => {
     e.preventDefault()
     if (!isInCart(name))
-      addToCart({ name: name, image: image, price: price, quantity: quantity })
+      addToCart({
+        name: name,
+        image: image,
+        price: price,
+        quantity: quantity,
+        productID: productID
+      })
   }
 
   return (

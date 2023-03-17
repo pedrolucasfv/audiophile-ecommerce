@@ -8,6 +8,7 @@ export type ItemProps = {
   price: number
   image: string
   quantity: number
+  productID: string
 }
 
 export type CartContextData = {
@@ -57,7 +58,8 @@ const CartProvider = ({ children }: CartProviderProps) => {
         name: itemFinal[0],
         image: itemFinal[1],
         price: parseInt(itemFinal[2]),
-        quantity: parseInt(itemFinal[3])
+        quantity: parseInt(itemFinal[3]),
+        productID: itemFinal[4]
       }
     })
 
@@ -80,7 +82,8 @@ const CartProvider = ({ children }: CartProviderProps) => {
         `name:${item.name},` +
         `image:${item.image},` +
         `price:${item.price},` +
-        `quantity:${item.quantity}`
+        `quantity:${item.quantity},` +
+        `productID:${item.productID}`
       )
     })
     setStorageItem(CART_KEY, newItemsString)
