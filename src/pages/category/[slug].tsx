@@ -20,12 +20,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const page = PagesMock.filter((pageMock) => {
     if (pageMock.slug == params?.slug) return pageMock
   })
-  const pageApi = (await getProducts) ? await getProducts.produtos() : undefined
-  await console.log(pageApi)
+  const allProducts = (await getProducts)
+    ? await getProducts.produtos()
+    : undefined
+  await console.log(allProducts)
+  const products = allProducts?.data.filter((product: ProductProps) => {
+    if (product.category == params?.slug) return product
+  })
   return {
     props: {
-      banners: pageApi
-        ? pageApi.data?.map((product: ProductProps) => {
+      banners: products
+        ? products.map((product: ProductProps) => {
             const banner = {
               nameProduct: product.name,
               description: product.description,
