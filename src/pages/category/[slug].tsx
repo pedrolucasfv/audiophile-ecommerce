@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import Category, { CategoryPageProps } from 'templates/Category'
 import PagesMock from 'templates/Category/mock'
-import getProdutos from '../../../utils/services/produtos'
+import getProducts, { ProductProps } from '../../../utils/services/products'
 
 export default function Index(props: CategoryPageProps) {
   return <Category {...props} />
@@ -20,17 +20,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const page = PagesMock.filter((pageMock) => {
     if (pageMock.slug == params?.slug) return pageMock
   })
-  const pageApi = (await getProdutos) ? await getProdutos.produtos() : undefined
+  const pageApi = (await getProducts) ? await getProducts.produtos() : undefined
   await console.log(pageApi)
   return {
     props: {
       banners: pageApi
-        ? pageApi.data?.map((produto) => {
+        ? pageApi.data?.map((product: ProductProps) => {
             const banner = {
-              nameProduct: produto.name,
-              description: produto.description,
-              image: produto.image,
-              slug: produto.productID,
+              nameProduct: product.name,
+              description: product.description,
+              image: product.image,
+              slug: product.productID,
               color: 'none'
             }
             return banner
