@@ -5,7 +5,7 @@ export type InputProps = {
   name: string
   label: string
   placeholder: string
-  initialValue?: string
+  initialValue?: string | number
   type: string
   onInput?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }

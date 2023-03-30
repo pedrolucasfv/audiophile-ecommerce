@@ -4,14 +4,14 @@ export const Wrapper = styled.main``
 
 export const Input = styled.input`
   ${({ theme }) => css`
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.xxsmall} 0;
     background: transparent;
     border: 0;
     outline: none;
-
+    width: 100%;
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 ${theme.spacings.small}
         ${theme.colors.lightGray} inset;
@@ -28,7 +28,7 @@ export const InputWrapper = styled.div`
     display: flex;
     align-items: center;
     background: ${theme.colors.lightGray};
-    border-radius: 0.2rem;
+    border-radius: 1rem;
     padding: 0 ${theme.spacings.xsmall};
     border: 0.2rem solid;
     border-color: ${theme.colors.lightGray};
@@ -42,7 +42,7 @@ export const InputWrapper = styled.div`
 export const Label = styled.label`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
     cursor: pointer;
   `}
 `

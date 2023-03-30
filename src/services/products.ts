@@ -12,7 +12,10 @@ export type ProductProps = {
 const getProducts = {
   produtos: () => Api.get('/produtos').catch(() => null),
   adicionar: (produto: ProductProps) =>
-    Api.post('/produtos', produto).catch(() => null)
+    Api.post('/produtos', produto).catch((error) => {
+      console.log(error)
+      return
+    })
 }
 
 export default getProducts

@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import Category, { CategoryPageProps } from 'templates/Category'
 import PagesMock from 'templates/Category/mock'
-import getProducts, { ProductProps } from '../../../utils/services/products'
+import getProducts, { ProductProps } from '../../services/products'
 
 export default function Index(props: CategoryPageProps) {
   return <Category {...props} />

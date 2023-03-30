@@ -1,23 +1,57 @@
-import Input from 'components/Input'
 import * as S from './styles'
 import { useState } from 'react'
+import getProducts, { ProductProps } from '../../services/products'
+import Input from 'components/Input'
+
 const Form = () => {
-  const [product, setProduct] = useState({})
+  const [product, setProduct] = useState<ProductProps>({
+    name: '',
+    description: '',
+    category: '',
+    image: '',
+    price: 0,
+    productID: ''
+  })
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setProduct({ ...product, [e.target.name]: e.target.value })
+    if (e.target.name == 'price') {
+      setProduct({ ...product, [e.target.name]: parseInt(e.target.value) })
+    } else {
+      setProduct({ ...product, [e.target.name]: e.target.value })
+    }
   }
-  function onSubmit() {
+  async function onSubmit() {
+    const productApi: ProductProps = product
+    await getProducts.adicionar(productApi)
     console.log(product)
   }
 
   return (
     <S.Wrapper>
+      <S.Title>ADD PRODUCT</S.Title>
       <S.Input>
         <Input
           name="name"
           label="Product Name"
           placeholder="COLOCA O NOME AI"
           type="text"
+          onInput={handleChange}
+        />
+      </S.Input>
+      <S.Input>
+        <Input
+          name="description"
+          label="Description"
+          placeholder="COLOCA UMA DESCRIÇÃO AI"
+          type="text"
+          onInput={handleChange}
+        />
+      </S.Input>
+      <S.Input>
+        <Input
+          name="price"
+          label="Price"
+          placeholder="COLOCA O PREÇO"
+          type="number"
           onInput={handleChange}
         />
       </S.Input>
@@ -48,7 +82,7 @@ const Form = () => {
           onInput={handleChange}
         />
       </S.Input>
-      <S.Button onClick={() => onSubmit()}>SUBMIT</S.Button>
+      <S.Button onClick={() => onSubmit()}>ADD</S.Button>
     </S.Wrapper>
   )
 }
