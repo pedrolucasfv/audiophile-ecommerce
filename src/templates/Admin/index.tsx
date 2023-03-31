@@ -3,6 +3,7 @@ import Footer from 'components/Footer'
 import Form from 'components/Form'
 import Menu from 'components/Menu'
 import * as S from './styles'
+import ProductList from 'components/ProductList'
 
 const Admin = () => {
   const footer = {
@@ -13,6 +14,26 @@ const Admin = () => {
       twitter: '/'
     }
   }
+  const products = [
+    {
+      name: 'XX99 MARK ll HEADPHONES',
+      description:
+        'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
+      price: 2.999,
+      image: '/img/image-product.jpg',
+      productID: '124u81264712',
+      category: 'headphones'
+    },
+    {
+      name: 'XX99 MARK ll HEADPHONES',
+      description:
+        'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
+      price: 2.999,
+      image: '/img/image-product.jpg',
+      productID: '1247612456712',
+      category: 'headphones'
+    }
+  ]
   return (
     <S.Wrapper>
       <S.BlackContent>
@@ -21,7 +42,12 @@ const Admin = () => {
           <S.Title>ADMIN</S.Title>
         </Container>
       </S.BlackContent>
-      <Form />
+      <Container>
+        <S.ProductList>
+          <ProductList products={products} />
+        </S.ProductList>
+        <Form />
+      </Container>
       <S.BlackContent>
         <Container>
           <Footer {...footer} />

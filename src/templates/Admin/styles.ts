@@ -23,3 +23,7 @@ export const Title = styled.h4`
     `}
   `}
 `
+export const ProductList = styled.div`
+  margin-top: 20rem;
+  margin-bottom: 20rem;
+`
