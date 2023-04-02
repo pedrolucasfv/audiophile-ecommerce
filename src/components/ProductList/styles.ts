@@ -17,7 +17,10 @@ export const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 2rem 5rem;
+  padding: 0 5rem;
+  width: 100rem;
+  height: 45rem;
+  margin-top: -2rem;
 `
 
 export const Heading = styled.h2`
@@ -35,10 +38,9 @@ export const Heading = styled.h2`
 
 export const ImageWrapper = styled.div`
   ${({ theme }) => css`
-    width: 30rem;
+    width: 60rem;
     height: 40rem;
     @media (min-width: 1500px) {
-      width: 60rem;
     }
     ${media.lessThan('medium')`
       width: 35rem;
@@ -64,7 +66,7 @@ export const Text = styled.h3`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.normal};
-    margin-bottom: ${theme.spacings.large};
+    margin-bottom: ${theme.spacings.small};
     color: ${theme.colors.darkGray};
     span {
       color: ${theme.colors.white};
@@ -135,3 +137,17 @@ export const ImageProduct = styled.div`
     border: solid 0.1rem ${theme.colors.accent};
   `}
 `
+export const Options = styled.div`
+  ${({ theme }) => css`
+    svg {
+      margin-right: ${theme.spacings.medium};
+      :hover {
+        color: ${theme.colors.accent};
+      }
+    }
+  `}
+`
+
+export const EditItem = styled.div``
+
+export const RemoveItem = styled.div``

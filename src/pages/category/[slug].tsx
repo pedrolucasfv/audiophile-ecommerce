@@ -23,7 +23,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allProducts = (await getProducts)
     ? await getProducts.produtos()
     : undefined
-  await console.log(allProducts)
   const products = allProducts?.data.filter((product: ProductProps) => {
     if (product.category == params?.slug) return product
   })

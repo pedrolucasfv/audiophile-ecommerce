@@ -3,7 +3,11 @@ import { useState } from 'react'
 import getProducts, { ProductProps } from '../../services/products'
 import Input from 'components/Input'
 
-const Form = () => {
+export type FormProps = {
+  addProduct?: () => void
+}
+
+const Form = ({ addProduct }: FormProps) => {
   const [product, setProduct] = useState<ProductProps>({
     name: '',
     description: '',
@@ -22,7 +26,7 @@ const Form = () => {
   async function onSubmit() {
     const productApi: ProductProps = product
     await getProducts.adicionar(productApi)
-    console.log(product)
+    addProduct && (await addProduct())
   }
 
   return (

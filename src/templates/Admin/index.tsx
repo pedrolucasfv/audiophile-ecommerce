@@ -4,8 +4,22 @@ import Form from 'components/Form'
 import Menu from 'components/Menu'
 import * as S from './styles'
 import ProductList from 'components/ProductList'
+import getProducts, { ProductProps } from 'services/products'
+import { useEffect, useState } from 'react'
 
 const Admin = () => {
+  const initialProduct: ProductProps = {
+    name: 'ZX7 SPEAKER',
+    description:
+      'Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.',
+    price: 350,
+    image: '/img/product-zx7-speaker/desktop/image-product.jpg',
+    productID: 'price_1MmdjeC8ZSL4Yw9IR7pF76ZI',
+    category: 'speakers'
+  }
+  const [products, setProducts] = useState([initialProduct])
+  const [handleChange, setHandleChange] = useState(false)
+
   const footer = {
     text: 'Audiophile is an all in one stop to fulfill your audio needs. We are a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we are open 7 days a week.',
     socialNetworks: {
@@ -14,26 +28,21 @@ const Admin = () => {
       twitter: '/'
     }
   }
-  const products = [
-    {
-      name: 'XX99 MARK ll HEADPHONES',
-      description:
-        'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
-      price: 2.999,
-      image: '/img/image-product.jpg',
-      productID: '124u81264712',
-      category: 'headphones'
-    },
-    {
-      name: 'XX99 MARK ll HEADPHONES',
-      description:
-        'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
-      price: 2.999,
-      image: '/img/image-product.jpg',
-      productID: '1247612456712',
-      category: 'headphones'
+
+  useEffect(() => {
+    async function Api() {
+      const allProducts = (await getProducts)
+        ? await getProducts.produtos()
+        : undefined
+      await console.log(allProducts)
+      await setProducts(allProducts?.data)
     }
-  ]
+    Api()
+  }, [handleChange])
+
+  const onChange = () => {
+    setHandleChange(!handleChange)
+  }
   return (
     <S.Wrapper>
       <S.BlackContent>
@@ -44,9 +53,9 @@ const Admin = () => {
       </S.BlackContent>
       <Container>
         <S.ProductList>
-          <ProductList products={products} />
+          <ProductList products={products} onChange={onChange} />
         </S.ProductList>
-        <Form />
+        <Form addProduct={onChange} />
       </Container>
       <S.BlackContent>
         <Container>

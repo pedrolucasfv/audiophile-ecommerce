@@ -15,6 +15,11 @@ const getProducts = {
     Api.post('/produtos', produto).catch((error) => {
       console.log(error)
       return
+    }),
+  deletar: (productID: string) =>
+    Api.delete(`/produtos/${productID}`).catch((error) => {
+      console.log(error)
+      return
     })
 }
 
