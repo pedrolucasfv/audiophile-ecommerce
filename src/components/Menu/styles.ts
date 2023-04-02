@@ -130,7 +130,7 @@ export const Sombra = styled.div`
   height: 100vh;
   left: 0;
   top: 0;
-  z-index: 40;
+  z-index: 10;
 `
 type AccountProps = {
   isAccountOpen: boolean
@@ -140,7 +140,7 @@ export const Account = styled.div<AccountProps>`
   ${({ isAccountOpen }) => css`
     position: absolute;
     right: 0%;
-    z-index: 50;
+    z-index: 20;
     width: 38rem;
     ${media.greaterThan('medium')`
       right: 100%;

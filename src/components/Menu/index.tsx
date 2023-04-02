@@ -9,12 +9,17 @@ import { useState } from 'react'
 import Cart from 'components/Cart'
 import CartIcon from 'components/CartIcon'
 import SignIn from 'components/SignIn'
+import Link from 'next/link'
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [isAccountOpen, setIsAccountOpen] = useState(false)
-
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+    setIsCartOpen(false)
+    setIsAccountOpen(false)
+  }
   return (
     <S.Wrapper>
       <MediaMatch lessThan="medium" onClick={() => setIsMenuOpen(true)}>
@@ -25,10 +30,18 @@ const Menu = () => {
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <S.MenuLink href="/">home</S.MenuLink>
-          <S.MenuLink href="/category/headphones">headphones</S.MenuLink>
-          <S.MenuLink href="/category/speakers">speakers</S.MenuLink>
-          <S.MenuLink href="/category/earphones">earphones</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>home</S.MenuLink>
+          </Link>
+          <Link href="/category/headphones" passHref>
+            <S.MenuLink>headphones</S.MenuLink>
+          </Link>
+          <Link href="/category/speakers" passHref>
+            <S.MenuLink>speakers</S.MenuLink>
+          </Link>
+          <Link href="/category/earphones" passHref>
+            <S.MenuLink>earphones</S.MenuLink>
+          </Link>
         </S.MenuNav>
       </MediaMatch>
 
@@ -50,15 +63,24 @@ const Menu = () => {
           aria-label="Close Menu"
           onClick={() => setIsMenuOpen(false)}
         />
-        <S.MenuNav>
-          <S.MenuLink href="/">home</S.MenuLink>
-          <S.MenuLink href="/category/headphones">headphones</S.MenuLink>
-          <S.MenuLink href="/category/speakers">speakers</S.MenuLink>
-          <S.MenuLink href="/category/earphones">earphones</S.MenuLink>
+        <S.MenuNav onClick={() => closeMenu()}>
+          <Link href="/" passHref>
+            <S.MenuLink>home</S.MenuLink>
+          </Link>
+          <Link href="/category/headphones" passHref>
+            <S.MenuLink>headphones</S.MenuLink>
+          </Link>
+          <Link href="/category/speakers" passHref>
+            <S.MenuLink>speakers</S.MenuLink>
+          </Link>
+          <Link href="/category/earphones" passHref>
+            <S.MenuLink>earphones</S.MenuLink>
+          </Link>
         </S.MenuNav>
       </S.MenuToggle>
-      {isCartOpen && <S.Sombra onClick={() => setIsCartOpen(false)} />}
-      {isAccountOpen && <S.Sombra onClick={() => setIsAccountOpen(false)} />}
+      {[isCartOpen, isAccountOpen, isMenuOpen].includes(true) && (
+        <S.Sombra onClick={() => closeMenu()} />
+      )}
     </S.Wrapper>
   )
 }

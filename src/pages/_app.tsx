@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import { SessionProvider } from 'next-auth/react'
+import NextNProgress from 'nextjs-progressbar'
 
 import GlobalStyles from 'styles/global'
 import theme from 'styles/theme'
@@ -23,6 +24,13 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
               />
             </Head>
             <GlobalStyles />
+            <NextNProgress
+              color="#d87d4a"
+              startPosition={0.3}
+              stopDelayMs={200}
+              height={4}
+              showOnShallow={true}
+            />
             <Component {...pageProps} />
           </CartProvider>
         </SessionProvider>
