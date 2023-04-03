@@ -10,21 +10,14 @@ export const Wrapper = styled.main`
   align-items: center;
 `
 
-type ImageProps = {
-  src: string
-}
-export const Image = styled.div<ImageProps>`
-  ${({ src }) => css`
-    margin-top: 0.6rem;
-    height: 35rem;
-    width: 35rem;
-    ${media.greaterThan('medium')`
+export const Image = styled.div`
+  margin-top: 0.6rem;
+  height: 35rem;
+  position: relative;
+  ${media.greaterThan('medium')`
     height: 50rem;
     width: 100%;
     min-width: 54rem;
-   `}
-    background-image: url(${src});
-    background-size: cover;
   `}
 `
 

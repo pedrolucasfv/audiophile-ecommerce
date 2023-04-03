@@ -57,7 +57,12 @@ const Banner = ({
         </Link>
       </S.Info>
       <S.ImageBox>
-        <Image src={image} width={650} height={650} />
+        <Image
+          src={image}
+          width={650}
+          height={650}
+          alt="image of a product in a banner"
+        />
       </S.ImageBox>
       <svg width="944" height="944" xmlns="http://www.w3.org/2000/svg">
         <g stroke="#FFF" fill="none" opacity=".202">

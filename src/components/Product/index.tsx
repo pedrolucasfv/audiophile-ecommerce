@@ -3,6 +3,7 @@ import UnitSelector from 'components/UnitSelector'
 import { useCart } from 'hooks'
 import { useState } from 'react'
 import * as S from './styles'
+import Image from 'next/image'
 
 export type ProductProps = {
   title?: string
@@ -41,7 +42,14 @@ const Product = ({
 
   return (
     <S.Wrapper>
-      <S.Image src={image} />
+      <S.Image>
+        <Image
+          src={image}
+          alt="the product of this page"
+          layout="fill"
+          objectFit="contain"
+        />
+      </S.Image>
       <S.Content>
         {!!title && <S.Title>{title}</S.Title>}
         <S.Name>{name}</S.Name>

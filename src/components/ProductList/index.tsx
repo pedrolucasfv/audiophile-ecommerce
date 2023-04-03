@@ -27,9 +27,9 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
         <S.ImageWrapper>
           <Image
             src={productSelected.image || '/img/image-product.jpg'}
-            alt="asdfd"
             layout="fill"
             objectFit="cover"
+            alt="Product selected in the productlist."
           />
         </S.ImageWrapper>
         <S.Info>
@@ -55,7 +55,7 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
             <S.ImageProduct>
               <Image
                 src={product.image}
-                alt="asdfd"
+                alt="a product of product list"
                 layout="fill"
                 objectFit="cover"
               />

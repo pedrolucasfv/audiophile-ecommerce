@@ -23,6 +23,7 @@ const Footer = ({ text, socialNetworks }: FooterProps) => (
       src="/img/logo-audiophile.png"
       objectFit="contain"
       aria-label="audiophile"
+      alt="logo audiophile"
     />
 
     <S.MenuNav>

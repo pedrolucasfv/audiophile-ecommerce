@@ -16,18 +16,11 @@ export const Wrapper = styled.main`
   `}
 `
 
-type ImageProps = {
-  src: string
-}
-export const Image = styled.div<ImageProps>`
-  ${({ src }) => css`
-    margin-top: -5rem;
-    height: 15rem;
-    width: 15rem;
-    background-image: url(${src});
-    background-size: contain;
-    background-repeat: no-repeat;
-  `}
+export const Image = styled.div`
+  position: relative;
+  margin-top: -5rem;
+  height: 15rem;
+  width: 15rem;
 `
 
 export const Title = styled.h5`

@@ -31,6 +31,7 @@ const Menu = () => {
         height={50}
         width={150}
         src="/img/logo-audiophile.png"
+        alt="logo audiophile"
         objectFit="contain"
         aria-label="audiophile"
       />

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import * as S from './styles'
 
 export type ContentInfoProps = {
@@ -8,7 +9,16 @@ export type ContentInfoProps = {
 
 const ContentInfo = ({ image, text, title }: ContentInfoProps) => (
   <S.Wrapper>
-    <S.Image src={image} role="img" aria-label="Image ContentInfo" />
+    <S.Image>
+      <Image
+        src={image}
+        aria-label="Image ContentInfo"
+        objectFit="cover"
+        layout="fill"
+        alt="image"
+      />
+    </S.Image>
+
     <S.Info>
       <S.Title dangerouslySetInnerHTML={{ __html: title }} />
       <S.Text>{text}</S.Text>

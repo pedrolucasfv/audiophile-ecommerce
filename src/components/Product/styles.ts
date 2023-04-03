@@ -10,19 +10,12 @@ export const Wrapper = styled.main`
   `}
 `
 
-type ImageProps = {
-  src: string
-}
-export const Image = styled.div<ImageProps>`
-  ${({ src }) => css`
-    width: 50rem;
-    height: 50rem;
-    background: url(${src});
-    background-size: contain;
-    background-repeat: no-repeat;
-    ${media.lessThan('medium')`
+export const Image = styled.div`
+  width: 50rem;
+  height: 50rem;
+  position: relative;
+  ${media.lessThan('medium')`
       width: 40rem;
-  `}
   `}
 `
 

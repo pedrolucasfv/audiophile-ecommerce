@@ -3,6 +3,7 @@ import { useCart } from 'hooks'
 import { checkout } from './../../pages/api/stripe/checkout'
 
 import * as S from './styles'
+import Image from 'next/image'
 
 const Cart = () => {
   const {
@@ -40,7 +41,13 @@ const Cart = () => {
       {items?.map((value) => (
         <>
           <S.Item>
-            <S.Image src={value.image} />
+            <Image
+              src={value.image}
+              objectFit="cover"
+              height={65}
+              width={65}
+              alt="image of a product that is in the cart"
+            />
             <S.ContentItem>
               <S.NameProduct>{value.name}</S.NameProduct>
               <S.Price>R$ {value.price}</S.Price>

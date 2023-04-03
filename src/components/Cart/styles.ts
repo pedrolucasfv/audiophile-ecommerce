@@ -45,20 +45,6 @@ export const RemoveAll = styled.a`
   `}
 `
 
-type ImageProps = {
-  src: string
-}
-
-export const Image = styled.div<ImageProps>`
-  ${({ src }) => css`
-    height: 8rem;
-    width: 8rem;
-    background: url(${src});
-    background-size: cover;
-    background-repeat: no-repeat;
-  `}
-`
-
 export const Item = styled.div`
   display: flex;
   justify-content: space-between;
