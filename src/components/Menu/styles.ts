@@ -104,6 +104,7 @@ export const MenuToggle = styled.nav<MenuToggleProps>`
       font-weight: bold;
       font-size: 1.2rem;
       margin-bottom: 1rem;
+      padding: 3rem 0;
       transform: ${isOpenMenu ? 'translateY(0)' : 'translateY(3rem)'};
       transition: transform 0.3s ease-in-out;
     }
