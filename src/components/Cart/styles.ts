@@ -33,7 +33,7 @@ export const Title = styled.h4`
   `}
 `
 
-export const RemoveAll = styled.a`
+export const RemoveAll = styled.div`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.medium};
     color: ${theme.colors.darkGray};
