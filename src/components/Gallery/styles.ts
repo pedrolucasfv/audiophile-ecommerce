@@ -1,9 +1,5 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import media from 'styled-media-query'
-
-type ImageProps = {
-  src: string
-}
 
 export const Wrapper = styled.main`
   display: grid;
@@ -25,32 +21,17 @@ export const LeftContent = styled.div`
 
 export const RightContent = styled.div``
 
-export const ImageBox = styled.div<ImageProps>`
-  ${({ src }) => css`
-    width: 45rem;
-    height: 29rem;
-    ${media.lessThan('medium')`
+export const ImageBox = styled.div`
+  width: 45rem;
+  height: 29rem;
+  ${media.lessThan('medium')`
     width: 40rem;
-    margin-bottom: 1rem;
-    `}
-    background: url(${src});
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 0.8rem;
+    height: 27rem;
   `}
 `
 
-export const MainImage = styled.div<ImageProps>`
-  ${({ src }) => css`
-    width: 65rem;
-    height: 60rem;
-    ${media.lessThan('medium')`
+export const MainImage = styled.div`
+  ${media.lessThan('medium')`
     width: 40rem;
-    height: 40rem;
-    `}
-    background: url(${src});
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 0.8rem;
   `}
 `

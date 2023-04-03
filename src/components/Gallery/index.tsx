@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import * as S from './styles'
 
 export type GalleryProps = {
@@ -9,11 +10,17 @@ export type GalleryProps = {
 const Gallery = ({ firstImage, secondImage, thirdImage }: GalleryProps) => (
   <S.Wrapper>
     <S.LeftContent>
-      <S.ImageBox src={firstImage} />
-      <S.ImageBox src={secondImage} />
+      <S.ImageBox>
+        <Image width={450} height={290} src={firstImage} objectFit="cover" />
+      </S.ImageBox>
+      <S.ImageBox>
+        <Image width={450} height={290} src={secondImage} objectFit="cover" />
+      </S.ImageBox>
     </S.LeftContent>
     <S.RightContent>
-      <S.MainImage src={thirdImage} />
+      <S.MainImage>
+        <Image width={650} height={600} src={thirdImage} objectFit="cover" />
+      </S.MainImage>
     </S.RightContent>
   </S.Wrapper>
 )

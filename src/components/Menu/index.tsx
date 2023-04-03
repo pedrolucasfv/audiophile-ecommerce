@@ -10,6 +10,7 @@ import Cart from 'components/Cart'
 import CartIcon from 'components/CartIcon'
 import SignIn from 'components/SignIn'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -26,7 +27,13 @@ const Menu = () => {
         <MenuButtonWide size={18} color="white" aria-label="open menu" />
       </MediaMatch>
 
-      <S.Logo role="img" aria-label="Audiophile" />
+      <Image
+        height={50}
+        width={150}
+        src="/img/logo-audiophile.png"
+        objectFit="contain"
+        aria-label="audiophile"
+      />
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>

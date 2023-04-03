@@ -16,11 +16,12 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
           <CartProvider>
             <Head>
               <title>Audiophile e-commerce</title>
-              <link rel="manifest" href="/manifest.json" />
-              <meta name="theme-color" content="#06092B" />
+              <meta name="theme-color" content="#d87d4a" />
+              <link rel="shortcut icon" href="/img/image-product.jpg" />
+
               <meta
                 name="description"
-                content="A project to work with TypeScript, React, NextJS and Styled Components"
+                content="A E-commerce made to practice my skills and improve my line of technologies."
               />
             </Head>
             <GlobalStyles />

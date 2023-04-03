@@ -2,6 +2,7 @@ import * as S from './styles'
 import { Facebook } from '@styled-icons/bootstrap/Facebook'
 import { Twitter } from '@styled-icons/bootstrap/Twitter'
 import { Instagram } from '@styled-icons/bootstrap/Instagram'
+import Image from 'next/image'
 
 type socialNetworkProps = {
   facebook: string
@@ -16,7 +17,13 @@ export type FooterProps = {
 
 const Footer = ({ text, socialNetworks }: FooterProps) => (
   <S.Wrapper>
-    <S.Logo role="img" aria-label="Audiophile" />
+    <Image
+      height={50}
+      width={150}
+      src="/img/logo-audiophile.png"
+      objectFit="contain"
+      aria-label="audiophile"
+    />
 
     <S.MenuNav>
       <S.MenuLink href="/">home</S.MenuLink>

@@ -12,15 +12,6 @@ export const Wrapper = styled.main`
   `}
 `
 
-export const Logo = styled.div`
-  margin-top: 0.6rem;
-  height: 5rem;
-  width: 15rem;
-  background-image: url('/img/logo-audiophile.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-`
-
 export const MenuNav = styled.div``
 
 export const MenuLink = styled.a`
