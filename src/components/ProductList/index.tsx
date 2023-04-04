@@ -1,8 +1,8 @@
-import getProducts, { ProductProps } from 'services/products'
-import * as S from './styles'
+import { TrashFill } from '@styled-icons/bootstrap/TrashFill'
 import Image from 'next/image'
 import { useState } from 'react'
-import { TrashFill } from '@styled-icons/bootstrap/TrashFill'
+import getProducts, { ProductProps } from 'services/products'
+import * as S from './styles'
 
 import { Pencil } from '@styled-icons/bootstrap/Pencil'
 
@@ -45,7 +45,7 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
             {productSelected.productID}
           </S.Text>
           <S.Text>
-            <span>Category: </span> {products[0].category}
+            <span>Category: </span> {productSelected.category}
           </S.Text>
         </S.Info>
       </S.Content>

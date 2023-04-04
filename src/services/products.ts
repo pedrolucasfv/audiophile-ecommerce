@@ -10,14 +10,14 @@ export type ProductProps = {
 }
 
 const getProducts = {
-  produtos: () => Api.get('/produtos').catch(() => null),
+  produtos: () => Api.get('/products').catch(() => null),
   adicionar: (produto: ProductProps) =>
-    Api.post('/produtos', produto).catch((error) => {
+    Api.post('/products', produto).catch((error) => {
       console.log(error)
       return
     }),
   deletar: (productID: string) =>
-    Api.delete(`/produtos/${productID}`).catch((error) => {
+    Api.delete(`/products/?productID=${productID}`).catch((error) => {
       console.log(error)
       return
     })
