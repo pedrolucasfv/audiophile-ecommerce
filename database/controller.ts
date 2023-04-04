@@ -5,7 +5,6 @@ export async function getUsers(req: NextApiRequest, res: NextApiResponse) {
   try {
     const products = await Products.find({})
     if (!products) return res.status(404).json({ error: 'Data not Found' })
-    console.log(products)
     res.status(200).json(products)
   } catch (error) {
     res.status(404).json({ error: 'Error while Fetching Data!' })
