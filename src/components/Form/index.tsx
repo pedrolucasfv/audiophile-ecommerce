@@ -1,21 +1,17 @@
-import * as S from './styles'
+import Input from 'components/Input'
 import { useState } from 'react'
 import getProducts, { ProductProps } from '../../services/products'
-import Input from 'components/Input'
+import * as S from './styles'
 
 export type FormProps = {
-  addProduct?: () => void
+  onChange?: () => void
+  type: 'update' | 'add'
+  productSelected: ProductProps
 }
 
-const Form = ({ addProduct }: FormProps) => {
-  const [product, setProduct] = useState<ProductProps>({
-    name: '',
-    description: '',
-    category: '',
-    image: '',
-    price: 0,
-    productID: ''
-  })
+const Form = ({ onChange, type, productSelected }: FormProps) => {
+  const [product, setProduct] = useState<ProductProps>(productSelected)
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.name == 'price') {
       setProduct({ ...product, [e.target.name]: parseInt(e.target.value) })
@@ -23,15 +19,22 @@ const Form = ({ addProduct }: FormProps) => {
       setProduct({ ...product, [e.target.name]: e.target.value })
     }
   }
+
   async function onSubmit() {
-    const productApi: ProductProps = product
-    await getProducts.adicionar(productApi)
-    addProduct && (await addProduct())
+    if (type == 'add') {
+      const productApi: ProductProps = product
+      await getProducts.adicionar(productApi)
+    } else if (type == 'update') {
+      const productApi: ProductProps = product
+      await getProducts.modificar(productSelected.productID, productApi)
+    }
+    onChange && onChange()
   }
 
   return (
     <S.Wrapper>
-      <S.Title>ADD PRODUCT</S.Title>
+      {type == 'add' && <S.Title>ADD PRODUCT</S.Title>}
+      {type == 'update' && <S.Title>UPDATE PRODUCT</S.Title>}
       <S.Input>
         <Input
           name="name"
@@ -39,6 +42,7 @@ const Form = ({ addProduct }: FormProps) => {
           placeholder="COLOCA O NOME AI"
           type="text"
           onInput={handleChange}
+          initialValue={productSelected.name}
         />
       </S.Input>
       <S.Input>
@@ -48,6 +52,7 @@ const Form = ({ addProduct }: FormProps) => {
           placeholder="COLOCA UMA DESCRIÇÃO AI"
           type="text"
           onInput={handleChange}
+          initialValue={productSelected.description}
         />
       </S.Input>
       <S.Input>
@@ -57,6 +62,7 @@ const Form = ({ addProduct }: FormProps) => {
           placeholder="COLOCA O PREÇO"
           type="number"
           onInput={handleChange}
+          initialValue={productSelected.price}
         />
       </S.Input>
       <S.Input>
@@ -66,6 +72,7 @@ const Form = ({ addProduct }: FormProps) => {
           placeholder="COLOCA O ID QUE VOCÊ ADICIONOU NO STRIPE"
           type="text"
           onInput={handleChange}
+          initialValue={productSelected.productID}
         />
       </S.Input>
       <S.Input>
@@ -75,6 +82,7 @@ const Form = ({ addProduct }: FormProps) => {
           placeholder="COLOCA A CATEGORIA AEEEE"
           type="text"
           onInput={handleChange}
+          initialValue={productSelected.category}
         />
       </S.Input>
       <S.Input>
@@ -84,8 +92,10 @@ const Form = ({ addProduct }: FormProps) => {
           placeholder="COLOCA AI O DIRETORIO DA IMAGEM"
           type="text"
           onInput={handleChange}
+          initialValue={productSelected.image}
         />
       </S.Input>
+
       <S.Button onClick={() => onSubmit()}>ADD</S.Button>
     </S.Wrapper>
   )

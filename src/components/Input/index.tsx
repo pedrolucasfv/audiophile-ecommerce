@@ -36,6 +36,7 @@ const Input = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          autoComplete="no"
         />
       </S.InputWrapper>
     </S.Wrapper>

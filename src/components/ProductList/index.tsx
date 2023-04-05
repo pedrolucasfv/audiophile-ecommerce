@@ -1,10 +1,13 @@
-import { TrashFill } from '@styled-icons/bootstrap/TrashFill'
 import Image from 'next/image'
 import { useState } from 'react'
-import getProducts, { ProductProps } from 'services/products'
-import * as S from './styles'
 
 import { Pencil } from '@styled-icons/bootstrap/Pencil'
+import { TrashFill } from '@styled-icons/bootstrap/TrashFill'
+
+import Form from 'components/Form'
+import getProducts, { ProductProps } from 'services/products'
+
+import * as S from './styles'
 
 export type ProductListProps = {
   products: ProductProps[]
@@ -15,10 +18,30 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
   const [productSelected, setProductSelected] = useState<ProductProps>(
     products[0]
   )
+  const [formHandler, setFormHandler] = useState<'add' | 'update' | 'none'>(
+    'none'
+  )
+
   async function deleteItem(productID: string) {
-    console.log(productID)
     getProducts && (await getProducts.deletar(productID))
     onChange && onChange()
+  }
+
+  async function updateItem(product: ProductProps) {
+    setProductSelected(product)
+    setFormHandler('update')
+  }
+
+  async function addItem() {
+    setProductSelected({
+      name: '',
+      price: 0,
+      description: '',
+      productID: '',
+      category: '',
+      image: ''
+    })
+    setFormHandler('add')
   }
   return (
     <S.Wrapper>
@@ -65,7 +88,7 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
               <S.PriceItem>R$ {product.price}</S.PriceItem>
             </S.ContentItem>
             <S.Options>
-              <Pencil size={30} />
+              <Pencil size={30} onClick={() => updateItem(product)} />
               <TrashFill
                 size={30}
                 onClick={() => deleteItem(product.productID)}
@@ -73,7 +96,15 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
             </S.Options>
           </S.Item>
         ))}
+        <S.AddButton onClick={() => addItem()}>ADD PRODUCT</S.AddButton>
       </S.Products>
+      {formHandler != 'none' && (
+        <Form
+          onChange={onChange}
+          type={formHandler}
+          productSelected={productSelected}
+        />
+      )}
     </S.Wrapper>
   )
 }

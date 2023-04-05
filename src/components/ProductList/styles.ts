@@ -151,3 +151,20 @@ export const Options = styled.div`
 export const EditItem = styled.div``
 
 export const RemoveItem = styled.div``
+
+export const AddButton = styled.button`
+  ${({ theme }) => css`
+    margin-bottom: 5rem;
+    background-color: ${theme.colors.accent};
+    color: ${theme.colors.white};
+    font-size: ${theme.font.sizes.medium};
+    letter-spacing: 0.5rem;
+    font-weight: ${theme.font.bold};
+    border-radius: 1rem;
+    border: 0.2rem solid ${theme.colors.white};
+    cursor: pointer;
+    :hover {
+      background-color: ${theme.colors.accentLight};
+    }
+  `}
+`

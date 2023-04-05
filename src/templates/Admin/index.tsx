@@ -1,11 +1,10 @@
 import { Container } from 'components/Container'
 import Footer from 'components/Footer'
-import Form from 'components/Form'
 import Menu from 'components/Menu'
-import * as S from './styles'
 import ProductList from 'components/ProductList'
-import getProducts, { ProductProps } from 'services/products'
 import { useEffect, useState } from 'react'
+import getProducts, { ProductProps } from 'services/products'
+import * as S from './styles'
 
 const Admin = () => {
   const initialProduct: ProductProps = {
@@ -55,7 +54,6 @@ const Admin = () => {
         <S.ProductList>
           <ProductList products={products} onChange={onChange} />
         </S.ProductList>
-        <Form addProduct={onChange} />
       </Container>
       <S.BlackContent>
         <Container>
