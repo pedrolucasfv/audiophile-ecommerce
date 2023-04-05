@@ -11,6 +11,19 @@ export const Wrapper = styled.main`
 
 export const Content = styled.div`
   display: flex;
+  animation: content-animation 1s forwards;
+  @keyframes content-animation {
+    0% {
+      transform: translateY(-500px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+`
+
+export const ContentBelowItem = styled.div`
+  overflow: hidden;
 `
 
 export const Info = styled.div`
@@ -148,9 +161,9 @@ export const Options = styled.div`
   `}
 `
 
-export const EditItem = styled.div``
-
-export const RemoveItem = styled.div``
+export const Form = styled.div`
+  overflow: hidden;
+`
 
 export const AddButton = styled.button`
   ${({ theme }) => css`
@@ -162,6 +175,8 @@ export const AddButton = styled.button`
     font-weight: ${theme.font.bold};
     border-radius: 1rem;
     border: 0.2rem solid ${theme.colors.white};
+    padding: ${theme.spacings.xsmall} ${theme.spacings.medium};
+
     cursor: pointer;
     :hover {
       background-color: ${theme.colors.accentLight};

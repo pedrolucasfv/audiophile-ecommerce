@@ -20,21 +20,20 @@ const Form = ({ onChange, type, productSelected }: FormProps) => {
     }
   }
 
-  async function onSubmit() {
-    if (type == 'add') {
-      const productApi: ProductProps = product
-      await getProducts.adicionar(productApi)
-    } else if (type == 'update') {
-      const productApi: ProductProps = product
-      await getProducts.modificar(productSelected.productID, productApi)
-    }
+  async function onAdd() {
+    const productApi: ProductProps = product
+    await getProducts.adicionar(productApi)
+    onChange && onChange()
+  }
+
+  async function onUpdate() {
+    const productApi: ProductProps = product
+    await getProducts.modificar(productSelected.productID, productApi)
     onChange && onChange()
   }
 
   return (
     <S.Wrapper>
-      {type == 'add' && <S.Title>ADD PRODUCT</S.Title>}
-      {type == 'update' && <S.Title>UPDATE PRODUCT</S.Title>}
       <S.Input>
         <Input
           name="name"
@@ -95,8 +94,11 @@ const Form = ({ onChange, type, productSelected }: FormProps) => {
           initialValue={productSelected.image}
         />
       </S.Input>
-
-      <S.Button onClick={() => onSubmit()}>ADD</S.Button>
+      <S.Button onClick={() => onChange && onChange()}>CANCEL</S.Button>
+      {type == 'add' && <S.Button onClick={() => onAdd()}>ADD</S.Button>}
+      {type == 'update' && (
+        <S.Button onClick={() => onUpdate()}>UPDATE</S.Button>
+      )}
     </S.Wrapper>
   )
 }

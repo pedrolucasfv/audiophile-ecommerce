@@ -28,53 +28,41 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
   }
 
   async function updateItem(product: ProductProps) {
-    setProductSelected(product)
-    setFormHandler('update')
+    if (formHandler == 'none') {
+      setProductSelected(product)
+      setFormHandler('update')
+    }
   }
 
   async function addItem() {
-    setProductSelected({
-      name: '',
-      price: 0,
-      description: '',
-      productID: '',
-      category: '',
-      image: ''
-    })
-    setFormHandler('add')
+    if (formHandler != 'update') {
+      setProductSelected({
+        name: '',
+        price: 0,
+        description: '',
+        productID: '',
+        category: '',
+        image: ''
+      })
+      setFormHandler('add')
+    }
   }
+
+  async function finishForm() {
+    setFormHandler('none')
+    onChange && onChange()
+  }
+
   return (
     <S.Wrapper>
       <S.Heading>List of Products </S.Heading>
-      <S.Content>
-        <S.ImageWrapper>
-          <Image
-            src={productSelected.image || '/img/image-product.jpg'}
-            layout="fill"
-            objectFit="cover"
-            alt="Product selected in the productlist."
-          />
-        </S.ImageWrapper>
-        <S.Info>
-          <S.Name>{productSelected.name}</S.Name>
-          <S.Text>
-            <span>Description: </span> {productSelected.description}
-          </S.Text>
-          <S.Text>
-            <span>Price:</span> {productSelected.price}
-          </S.Text>
-          <S.Text>
-            <span>ProductID: </span>
-            {productSelected.productID}
-          </S.Text>
-          <S.Text>
-            <span>Category: </span> {productSelected.category}
-          </S.Text>
-        </S.Info>
-      </S.Content>
-      <S.Products>
-        {products?.map((product, index) => (
-          <S.Item key={index} onClick={() => setProductSelected(product)}>
+      {products?.map((product, index) => (
+        <S.Products key={index}>
+          <S.Item
+            onClick={() =>
+              formHandler != 'update' && setProductSelected(product)
+            }
+          >
             <S.ImageProduct>
               <Image
                 src={product.image}
@@ -95,15 +83,64 @@ const ProductList = ({ products = [], onChange }: ProductListProps) => {
               />
             </S.Options>
           </S.Item>
-        ))}
-        <S.AddButton onClick={() => addItem()}>ADD PRODUCT</S.AddButton>
-      </S.Products>
-      {formHandler != 'none' && (
-        <Form
-          onChange={onChange}
-          type={formHandler}
-          productSelected={productSelected}
-        />
+          <S.ContentBelowItem>
+            {formHandler == 'update' && (
+              <>
+                {product == productSelected && (
+                  <S.Form>
+                    <Form
+                      onChange={finishForm}
+                      type={formHandler}
+                      productSelected={productSelected}
+                    />
+                  </S.Form>
+                )}
+              </>
+            )}
+            {formHandler == 'none' && (
+              <>
+                {product == productSelected && (
+                  <S.Content>
+                    <S.ImageWrapper>
+                      <Image
+                        src={productSelected.image || '/img/image-product.jpg'}
+                        layout="fill"
+                        objectFit="cover"
+                        alt="Product selected in the productlist."
+                      />
+                    </S.ImageWrapper>
+                    <S.Info>
+                      <S.Name>{productSelected.name}</S.Name>
+                      <S.Text>
+                        <span>Description: </span> {productSelected.description}
+                      </S.Text>
+                      <S.Text>
+                        <span>Price:</span> {productSelected.price}
+                      </S.Text>
+                      <S.Text>
+                        <span>ProductID: </span>
+                        {productSelected.productID}
+                      </S.Text>
+                      <S.Text>
+                        <span>Category: </span> {productSelected.category}
+                      </S.Text>
+                    </S.Info>
+                  </S.Content>
+                )}
+              </>
+            )}
+          </S.ContentBelowItem>
+        </S.Products>
+      ))}
+      <S.AddButton onClick={() => addItem()}>ADD PRODUCT</S.AddButton>
+      {formHandler == 'add' && (
+        <S.Form>
+          <Form
+            onChange={finishForm}
+            type={formHandler}
+            productSelected={productSelected}
+          />
+        </S.Form>
       )}
     </S.Wrapper>
   )
